@@ -4,11 +4,12 @@
  */
 package Emp_Info;
 //import java.util.Date;
+import javax.swing.ImageIcon;
 
 
 /**
  *
- * @author NRNirmala
+ * @author Anirudh
  */
 public class Employee {
     private String name;
@@ -20,16 +21,8 @@ public class Employee {
     private String teamInfo;
     private String position;
     private String email;
-    private String phNmbr;
-//    private String photo;
-
-//    public String getPhoto() {
-//        return photo;
-//    }
-//
-//    public void setPhoto(String photo) {
-//        this.photo = photo;
-//    }
+    private int phNmbr;
+    private ImageIcon photo;
 
     public String getName() {
         return name;
@@ -103,21 +96,20 @@ public class Employee {
         this.email = email;
     }
 
-    public String getPhNmbr() {
+    public int getPhNmbr() {
         return phNmbr;
     }
 
-    public void setPhNmbr(String phNmbr) {
+    public void setPhNmbr(int phNmbr) {
         this.phNmbr = phNmbr;
     }
-//
-//    public String getPhoto() {
-//        return photo;
-//    }
-//
-//    public void setPhoto(String photo) {
-//        this.photo = photo;
-//    }
-//    
-    
+
+    public ImageIcon getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(ImageIcon photo) {
+        this.photo = photo;
+    }
+   
 }

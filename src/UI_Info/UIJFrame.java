@@ -5,6 +5,7 @@
 package UI_Info;
 
 import Emp_Info.Employee;
+import Emp_Info.EmployeeHistory;
 
 /**
  *
@@ -17,10 +18,12 @@ public class UIJFrame extends javax.swing.JFrame {
      */
     
     Employee employee;
+    EmployeeHistory employeeHistory;
     
     public UIJFrame() {
         initComponents();
         employee = new Employee();
+        employeeHistory = new EmployeeHistory();
     }
 
     /**
@@ -36,11 +39,13 @@ public class UIJFrame extends javax.swing.JFrame {
         menuPanel = new javax.swing.JPanel();
         btnAddEmp = new javax.swing.JButton();
         btnViewEmp = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
         detailsPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        splitPane.setPreferredSize(new java.awt.Dimension(1500, 700));
+
+        menuPanel.setPreferredSize(new java.awt.Dimension(200, 700));
 
         btnAddEmp.setText(" Add Employee Details");
         btnAddEmp.addActionListener(new java.awt.event.ActionListener() {
@@ -50,10 +55,11 @@ public class UIJFrame extends javax.swing.JFrame {
         });
 
         btnViewEmp.setText("View Employee Details");
-
-        jButton3.setText("jButton1");
-
-        jButton4.setText("jButton1");
+        btnViewEmp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewEmpActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout menuPanelLayout = new javax.swing.GroupLayout(menuPanel);
         menuPanel.setLayout(menuPanelLayout);
@@ -62,11 +68,9 @@ public class UIJFrame extends javax.swing.JFrame {
             .addGroup(menuPanelLayout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnViewEmp, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnAddEmp, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(10, Short.MAX_VALUE))
         );
         menuPanelLayout.setVerticalGroup(
             menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -75,14 +79,12 @@ public class UIJFrame extends javax.swing.JFrame {
                 .addComponent(btnAddEmp)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnViewEmp)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton3)
-                .addGap(18, 18, 18)
-                .addComponent(jButton4)
-                .addContainerGap(211, Short.MAX_VALUE))
+                .addContainerGap(571, Short.MAX_VALUE))
         );
 
         splitPane.setLeftComponent(menuPanel);
+
+        detailsPanel.setPreferredSize(new java.awt.Dimension(1300, 700));
 
         javax.swing.GroupLayout detailsPanelLayout = new javax.swing.GroupLayout(detailsPanel);
         detailsPanel.setLayout(detailsPanelLayout);
@@ -92,7 +94,7 @@ public class UIJFrame extends javax.swing.JFrame {
         );
         detailsPanelLayout.setVerticalGroup(
             detailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 416, Short.MAX_VALUE)
+            .addGap(0, 700, Short.MAX_VALUE)
         );
 
         splitPane.setRightComponent(detailsPanel);
@@ -101,11 +103,11 @@ public class UIJFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(splitPane)
+            .addComponent(splitPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(splitPane)
+            .addComponent(splitPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -113,10 +115,17 @@ public class UIJFrame extends javax.swing.JFrame {
 
     private void btnAddEmpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddEmpActionPerformed
         // TODO add your handling code here:
-        
-        
-        
+         
+        AddEmpJPanel addEmpJPanel = new AddEmpJPanel(employeeHistory);
+        splitPane.setRightComponent(addEmpJPanel);
     }//GEN-LAST:event_btnAddEmpActionPerformed
+
+    private void btnViewEmpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewEmpActionPerformed
+         // TODO add your handling code here:
+         
+         ViewEmpJPanel viewEmpJPanel = new ViewEmpJPanel(employeeHistory);
+         splitPane.setRightComponent(viewEmpJPanel);
+    }//GEN-LAST:event_btnViewEmpActionPerformed
 
     /**
      * @param args the command line arguments
@@ -157,8 +166,6 @@ public class UIJFrame extends javax.swing.JFrame {
     private javax.swing.JButton btnAddEmp;
     private javax.swing.JButton btnViewEmp;
     private javax.swing.JPanel detailsPanel;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JPanel menuPanel;
     private javax.swing.JSplitPane splitPane;
     // End of variables declaration//GEN-END:variables

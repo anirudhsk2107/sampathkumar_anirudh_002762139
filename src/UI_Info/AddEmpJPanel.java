@@ -6,7 +6,12 @@ package UI_Info;
 
 import Emp_Info.Employee;
 import Emp_Info.EmployeeHistory;
+import java.awt.Image;
+import java.io.File;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
  *
@@ -57,8 +62,8 @@ public class AddEmpJPanel extends javax.swing.JPanel {
         txtPhoneNo = new javax.swing.JTextField();
         txtEmailAdd = new javax.swing.JTextField();
         btnSave = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        lblImage = new javax.swing.JLabel();
+        btnAttachImg = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(700, 500));
 
@@ -108,7 +113,12 @@ public class AddEmpJPanel extends javax.swing.JPanel {
             }
         });
 
-        jButton1.setText("Attach Image");
+        btnAttachImg.setText("Attach Image");
+        btnAttachImg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAttachImgActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -133,8 +143,8 @@ public class AddEmpJPanel extends javax.swing.JPanel {
                             .addGap(151, 151, 151)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(lblImage, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnAttachImg, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblAge)
@@ -214,9 +224,9 @@ public class AddEmpJPanel extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblPhoto)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblImage, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1)
+                .addComponent(btnAttachImg)
                 .addGap(24, 24, 24)
                 .addComponent(btnSave)
                 .addContainerGap(140, Short.MAX_VALUE))
@@ -243,7 +253,8 @@ public class AddEmpJPanel extends javax.swing.JPanel {
         String teamInfo = txtTeamInfo.getText();
         String position = txtPosTitle.getText();
         String email = txtEmailAdd.getText();
-        int phNmbr = Integer.parseInt(txtPhoneNo.getText());
+        long phNmbr = Long.parseLong(txtPhoneNo.getText());
+        ImageIcon img = (ImageIcon) lblImage.getIcon();
         
         Employee emp = employeeHistory.AddNewEmployee();
         
@@ -257,6 +268,7 @@ public class AddEmpJPanel extends javax.swing.JPanel {
         emp.setPosition(position);
         emp.setEmail(email);
         emp.setPhNmbr(phNmbr);
+        emp.setPhoto(img);
         
         JOptionPane.showMessageDialog(this,"Employee Data Saved Successfully"); 
         
@@ -270,18 +282,40 @@ public class AddEmpJPanel extends javax.swing.JPanel {
         txtPosTitle.setText("");
         txtEmailAdd.setText("");
         txtPhoneNo.setText("");
-        
+        lblImage.setIcon(new ImageIcon());
     }//GEN-LAST:event_btnSaveActionPerformed
+
+    private void btnAttachImgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAttachImgActionPerformed
+        // TODO add your handling code here:  
+        
+        JFileChooser image = new JFileChooser();
+        FileNameExtensionFilter fnef = new FileNameExtensionFilter("IMAGES","png","jpg","jpeg");
+        image.addChoosableFileFilter(fnef);
+        int openDialogue = image.showOpenDialog(null);
+        
+        if(openDialogue == JFileChooser.APPROVE_OPTION){
+            File selectedImg = image.getSelectedFile();
+            String selectedImgPath = selectedImg.getAbsolutePath(); 
+            
+            ImageIcon imgIcon = new ImageIcon(selectedImgPath);
+            Image img = imgIcon.getImage().getScaledInstance(lblImage.getWidth(), lblImage.getHeight(), Image.SCALE_SMOOTH);
+            lblImage.setIcon(new ImageIcon(img)); 
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null,"Please select a file with extension of .jpg or .jpeg or .png");
+        }
+    }//GEN-LAST:event_btnAttachImgActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAttachImg;
     private javax.swing.JButton btnSave;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblAge;
     private javax.swing.JLabel lblEmailAdd;
     private javax.swing.JLabel lblEmpId;
     private javax.swing.JLabel lblGender;
+    private javax.swing.JLabel lblImage;
     private javax.swing.JLabel lblLevel;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblPhoneNo;

@@ -21,7 +21,7 @@ public class Employee {
     private String teamInfo;
     private String position;
     private String email;
-    private int phNmbr;
+    private long phNmbr;
     private ImageIcon photo;
 
     public String getName() {
@@ -96,11 +96,11 @@ public class Employee {
         this.email = email;
     }
 
-    public int getPhNmbr() {
+    public long getPhNmbr() {
         return phNmbr;
     }
 
-    public void setPhNmbr(int phNmbr) {
+    public void setPhNmbr(long phNmbr) {
         this.phNmbr = phNmbr;
     }
 
@@ -111,5 +111,9 @@ public class Employee {
     public void setPhoto(ImageIcon photo) {
         this.photo = photo;
     }
-   
+    
+    @Override
+    public String toString(){
+        return name;
+    }
 }

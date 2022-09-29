@@ -17,12 +17,10 @@ public class UIJFrame extends javax.swing.JFrame {
      * Creates new form UIJFrame
      */
     
-    Employee employee;
     EmployeeHistory employeeHistory;
     
     public UIJFrame() {
         initComponents();
-        employee = new Employee();
         employeeHistory = new EmployeeHistory();
     }
 

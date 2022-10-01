@@ -4,6 +4,7 @@
  */
 package Emp_Info;
 //import java.util.Date;
+import java.util.Date;
 import javax.swing.ImageIcon;
 
 
@@ -16,7 +17,7 @@ public class Employee {
     private int empId;
     private int age;
     private char sex;
-    private String strtDate;
+    private Date strtDate;
     private String level;
     private String teamInfo;
     private String position;
@@ -56,11 +57,11 @@ public class Employee {
         this.sex = sex;
     }
 
-    public String getStrtDate() {
+    public Date getStrtDate() {
         return strtDate;
     }
 
-    public void setStrtDate(String strtDate) {
+    public void setStrtDate(Date strtDate) {
         this.strtDate = strtDate;
     }
 

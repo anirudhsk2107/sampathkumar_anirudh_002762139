@@ -7,8 +7,11 @@ package UI_Info;
 import Emp_Info.Employee;
 import Emp_Info.EmployeeHistory;
 import java.awt.Image;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.util.Date;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
@@ -57,7 +60,6 @@ public class AddEmpJPanel extends javax.swing.JPanel {
         txtName = new javax.swing.JTextField();
         txtEmpId = new javax.swing.JTextField();
         txtAge = new javax.swing.JTextField();
-        txtLevel = new javax.swing.JTextField();
         txtTeamInfo = new javax.swing.JTextField();
         txtPosTitle = new javax.swing.JTextField();
         txtPhoneNo = new javax.swing.JTextField();
@@ -67,6 +69,8 @@ public class AddEmpJPanel extends javax.swing.JPanel {
         btnAttachImg = new javax.swing.JButton();
         dtStrtDate = new com.toedter.calendar.JDateChooser();
         cbGender = new javax.swing.JComboBox<>();
+        cbLevel = new javax.swing.JComboBox<>();
+        lblEmailErr = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(700, 500));
 
@@ -109,6 +113,18 @@ public class AddEmpJPanel extends javax.swing.JPanel {
             }
         });
 
+        txtPhoneNo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtPhoneNoKeyPressed(evt);
+            }
+        });
+
+        txtEmailAdd.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtEmailAddKeyPressed(evt);
+            }
+        });
+
         btnSave.setText("Save");
         btnSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -130,6 +146,8 @@ public class AddEmpJPanel extends javax.swing.JPanel {
             }
         });
 
+        cbLevel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9" }));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -149,11 +167,11 @@ public class AddEmpJPanel extends javax.swing.JPanel {
                             .addComponent(lblLevel))
                         .addGap(77, 77, 77)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(cbGender, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtLevel, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+                            .addComponent(cbGender, 0, 140, Short.MAX_VALUE)
                             .addComponent(txtEmpId)
                             .addComponent(txtAge)
-                            .addComponent(txtName))
+                            .addComponent(txtName)
+                            .addComponent(cbLevel, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(124, 124, 124)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -185,7 +203,9 @@ public class AddEmpJPanel extends javax.swing.JPanel {
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(dtStrtDate, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
                                         .addComponent(txtPosTitle)))))))
-                .addContainerGap(264, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(lblEmailErr, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(86, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -213,7 +233,7 @@ public class AddEmpJPanel extends javax.swing.JPanel {
                         .addGap(21, 21, 21)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblLevel)
-                            .addComponent(txtLevel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(cbLevel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblStrtDate)
@@ -233,8 +253,9 @@ public class AddEmpJPanel extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblEmailAdd)
-                            .addComponent(txtEmailAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(21, 21, 21)
+                            .addComponent(txtEmailAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblEmailErr, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblPhoto)
                     .addComponent(lblImage, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -242,7 +263,7 @@ public class AddEmpJPanel extends javax.swing.JPanel {
                 .addComponent(btnAttachImg)
                 .addGap(18, 18, 18)
                 .addComponent(btnSave)
-                .addContainerGap(95, Short.MAX_VALUE))
+                .addContainerGap(98, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -257,25 +278,48 @@ public class AddEmpJPanel extends javax.swing.JPanel {
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         // TODO add your handling code here:     
 
-//        boolean flag = true;
-//        StringBuilder errorString = new StringBuilder();
+        boolean flag = true;
+        StringBuilder errorString = new StringBuilder();
         
-//        //Validations
-//        if(name == "")
-//        {
-//            //JOptionPane.showMessageDialog(null,"Please enter a name.");
-//            errorString.append("Name field cannot be blank.");
-//            flag = false;
-//        }
+        //Validations
+        if(txtName.getText().equals("")){
+            errorString.append("Name field cannot be blank.\n");
+            flag = false;
+        }
+        if(txtEmpId.getText().equals("")){
+            errorString.append("Employee ID cannot be blank.\n");
+            flag = false;
+        }
+        if(txtAge.getText().equals("")){
+            errorString.append("Age cannot be blank.\n");
+            flag = false;
+        }
+        if(txtTeamInfo.getText().equals("")){
+            errorString.append("Team Information cannot be blank.\n");
+            flag = false;
+        }
+        if(txtPosTitle.getText().equals("")){
+            errorString.append("Position Title cannot be blank.\n");
+            flag = false;
+        }
+        if(txtEmailAdd.getText().equals("")){
+            errorString.append("Email cannot be blank.\n");
+            flag = false;
+        }
+        if(txtPhoneNo.getText().equals("")){
+            errorString.append("Phone number cannot be blank.\n");
+            flag = false;
+        }
         
-        //if()
+        if(!flag){
+            JOptionPane.showMessageDialog(this,errorString); 
+            return;
+        }
         
         String name = txtName.getText();
         int empId = Integer.parseInt(txtEmpId.getText());
         int age = Integer.parseInt(txtAge.getText());
-        //char sex = txtGender.getText().charAt(0);
-        //String strtDate = txtStrtDate.getText();
-        String level = txtLevel.getText();
+        int level = Integer.parseInt(cbLevel.getSelectedItem().toString());
         String teamInfo = txtTeamInfo.getText();
         String position = txtPosTitle.getText();
         String email = txtEmailAdd.getText();
@@ -303,9 +347,7 @@ public class AddEmpJPanel extends javax.swing.JPanel {
         txtName.setText("");
         txtEmpId.setText("");
         txtAge.setText("");
-        //txtGender.setText("");
         dtStrtDate.setDate(null);
-        txtLevel.setText("");
         txtTeamInfo.setText("");
         txtPosTitle.setText("");
         txtEmailAdd.setText("");
@@ -339,15 +381,50 @@ public class AddEmpJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_cbGenderActionPerformed
 
+    private void txtPhoneNoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPhoneNoKeyPressed
+        // TODO add your handling code here:
+        String phone = txtPhoneNo.getText();
+        int len = phone.length();
+        
+        if(evt.getKeyChar() >= '0' && evt.getKeyChar() <= '9'){
+            if(len < 10)
+                txtPhoneNo.setEditable(true);
+            else
+                txtPhoneNo.setEditable(false);
+        }
+        else{
+            if (evt.getExtendedKeyCode()== KeyEvent.VK_BACK_SPACE || evt.getExtendedKeyCode()== KeyEvent.VK_DELETE){
+                txtPhoneNo.setEditable(true);
+            }else{
+                txtPhoneNo.setEditable(false);   
+            }
+        }
+    }//GEN-LAST:event_txtPhoneNoKeyPressed
+
+    private void txtEmailAddKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmailAddKeyPressed
+        // TODO add your handling code here:
+        
+        String regex = "^[a-zA-Z0-9]{0,30}[a-zA-Z]{0,10}[.][a-zA-Z]{0,5}$";
+        Pattern pt = Pattern.compile(regex);
+        Matcher match = pt.matcher(txtEmailAdd.getText());
+        
+        if(!match.matches())
+            lblEmailErr.setText("Please enter proper email address.");
+        else
+            lblEmailErr.setText("");
+    }//GEN-LAST:event_txtEmailAddKeyPressed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAttachImg;
     private javax.swing.JButton btnSave;
     private javax.swing.JComboBox<String> cbGender;
+    private javax.swing.JComboBox<String> cbLevel;
     private com.toedter.calendar.JDateChooser dtStrtDate;
     private org.jdatepicker.util.JDatePickerUtil jDatePickerUtil1;
     private javax.swing.JLabel lblAge;
     private javax.swing.JLabel lblEmailAdd;
+    private javax.swing.JLabel lblEmailErr;
     private javax.swing.JLabel lblEmpId;
     private javax.swing.JLabel lblGender;
     private javax.swing.JLabel lblImage;
@@ -362,7 +439,6 @@ public class AddEmpJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtAge;
     private javax.swing.JTextField txtEmailAdd;
     private javax.swing.JTextField txtEmpId;
-    private javax.swing.JTextField txtLevel;
     private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtPhoneNo;
     private javax.swing.JTextField txtPosTitle;

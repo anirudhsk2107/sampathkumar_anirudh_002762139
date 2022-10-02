@@ -121,7 +121,7 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace pref="12" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblTitle" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lblSearchInfo" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -279,6 +279,7 @@
     <Component class="javax.swing.JTextField" name="txtEmpId">
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtEmpIdActionPerformed"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtEmpIdKeyPressed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lblAge">
@@ -287,6 +288,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtAge">
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtAgeKeyPressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lblGender">
       <Properties>

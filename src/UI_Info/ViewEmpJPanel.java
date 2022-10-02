@@ -135,8 +135,19 @@ public class ViewEmpJPanel extends javax.swing.JPanel {
                 txtEmpIdActionPerformed(evt);
             }
         });
+        txtEmpId.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtEmpIdKeyPressed(evt);
+            }
+        });
 
         lblAge.setText("Age");
+
+        txtAge.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtAgeKeyPressed(evt);
+            }
+        });
 
         lblGender.setText("Gender");
 
@@ -307,7 +318,7 @@ public class ViewEmpJPanel extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(12, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblTitle)
                     .addComponent(lblSearchInfo))
@@ -401,7 +412,6 @@ public class ViewEmpJPanel extends javax.swing.JPanel {
         txtAge.setEnabled(false);
         cbGender.setEnabled(false);
         dtStartDate.setEnabled(false);
-        //txtLevel.setEnabled(false);
         txtTeamInfo.setEnabled(false);
         txtPosTitle.setEnabled(false);
         txtPhoneNo.setEnabled(false);
@@ -440,7 +450,6 @@ public class ViewEmpJPanel extends javax.swing.JPanel {
         txtEmpId.setText("");
         txtAge.setText("");
         dtStartDate.setDate(null);
-        //txtLevel.setText("");
         txtTeamInfo.setText("");
         txtPosTitle.setText("");
         txtEmailAdd.setText("");
@@ -468,7 +477,6 @@ public class ViewEmpJPanel extends javax.swing.JPanel {
         txtAge.setEnabled(true);
         cbGender.setEnabled(true);
         dtStartDate.setEnabled(true);
-        //txtLevel.setEnabled(true);
         cbLevel.setEnabled(true);
         txtTeamInfo.setEnabled(true);
         txtPosTitle.setEnabled(true);
@@ -552,6 +560,10 @@ public class ViewEmpJPanel extends javax.swing.JPanel {
             errorString.append("Phone number cannot be blank.\n");
             flag = false;
         }
+        if(!lblEmailErr.getText().equals((""))){
+            errorString.append("Please Enter proper email address.\n");
+            flag = false;            
+        }
         
         if(!flag){
             JOptionPane.showMessageDialog(this,errorString); 
@@ -632,7 +644,7 @@ public class ViewEmpJPanel extends javax.swing.JPanel {
 
     private void txtEmailAddKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmailAddKeyPressed
         // TODO add your handling code here:
-        String regex = "^[a-zA-Z0-9]{0,30}[a-zA-Z]{0,10}[.][a-zA-Z]{0,5}$";
+        String regex = "^(.+)@(.+)$";
         Pattern pt = Pattern.compile(regex);
         Matcher match = pt.matcher(txtEmailAdd.getText());
         
@@ -642,6 +654,47 @@ public class ViewEmpJPanel extends javax.swing.JPanel {
             lblEmailErr.setText("");
     }//GEN-LAST:event_txtEmailAddKeyPressed
 
+    private void txtEmpIdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmpIdKeyPressed
+        // TODO add your handling code here:
+        
+        String empId = txtEmpId.getText();
+        int len = empId.length();
+        
+        if(evt.getKeyChar() >= '0' && evt.getKeyChar() <= '9'){
+            if(len < 10)
+                txtEmpId.setEditable(true);
+            else
+                txtEmpId.setEditable(false);
+        }
+        else{
+            if (evt.getExtendedKeyCode()== KeyEvent.VK_BACK_SPACE || evt.getExtendedKeyCode()== KeyEvent.VK_DELETE){
+                txtEmpId.setEditable(true);
+            }else{
+                txtEmpId.setEditable(false);   
+            }
+        }
+    }//GEN-LAST:event_txtEmpIdKeyPressed
+
+    private void txtAgeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAgeKeyPressed
+        // TODO add your handling code here:
+        
+        String empId = txtAge.getText();
+        int len = empId.length();
+        
+        if(evt.getKeyChar() >= '0' && evt.getKeyChar() <= '9'){
+            if(len < 3)
+                txtAge.setEditable(true);
+            else
+                txtAge.setEditable(false);
+        }
+        else{
+            if (evt.getExtendedKeyCode()== KeyEvent.VK_BACK_SPACE || evt.getExtendedKeyCode()== KeyEvent.VK_DELETE){
+                txtAge.setEditable(true);
+            }else{
+                txtAge.setEditable(false);   
+            }
+        }
+    }//GEN-LAST:event_txtAgeKeyPressed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDelete;

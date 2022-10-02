@@ -112,6 +112,17 @@ public class AddEmpJPanel extends javax.swing.JPanel {
                 txtEmpIdActionPerformed(evt);
             }
         });
+        txtEmpId.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtEmpIdKeyPressed(evt);
+            }
+        });
+
+        txtAge.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtAgeKeyPressed(evt);
+            }
+        });
 
         txtPhoneNo.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -203,9 +214,8 @@ public class AddEmpJPanel extends javax.swing.JPanel {
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(dtStrtDate, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
                                         .addComponent(txtPosTitle)))))))
-                .addGap(18, 18, 18)
                 .addComponent(lblEmailErr, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(86, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -263,7 +273,7 @@ public class AddEmpJPanel extends javax.swing.JPanel {
                 .addComponent(btnAttachImg)
                 .addGap(18, 18, 18)
                 .addComponent(btnSave)
-                .addContainerGap(98, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -309,6 +319,14 @@ public class AddEmpJPanel extends javax.swing.JPanel {
         if(txtPhoneNo.getText().equals("")){
             errorString.append("Phone number cannot be blank.\n");
             flag = false;
+        }
+        else if (txtPhoneNo.getText().length() < 10){
+            errorString.append("Phone number has to be of 10 digits.\n");
+            flag = false;            
+        }
+        if(!lblEmailErr.getText().equals((""))){
+            errorString.append("Please Enter proper email address.\n");
+            flag = false;            
         }
         
         if(!flag){
@@ -404,7 +422,7 @@ public class AddEmpJPanel extends javax.swing.JPanel {
     private void txtEmailAddKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmailAddKeyPressed
         // TODO add your handling code here:
         
-        String regex = "^[a-zA-Z0-9]{0,30}[a-zA-Z]{0,10}[.][a-zA-Z]{0,5}$";
+        String regex = "^(.+)@(.+)$";
         Pattern pt = Pattern.compile(regex);
         Matcher match = pt.matcher(txtEmailAdd.getText());
         
@@ -414,6 +432,47 @@ public class AddEmpJPanel extends javax.swing.JPanel {
             lblEmailErr.setText("");
     }//GEN-LAST:event_txtEmailAddKeyPressed
 
+    private void txtEmpIdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmpIdKeyPressed
+        // TODO add your handling code here:
+        
+        String empId = txtEmpId.getText();
+        int len = empId.length();
+        
+        if(evt.getKeyChar() >= '0' && evt.getKeyChar() <= '9'){
+            if(len < 10)
+                txtEmpId.setEditable(true);
+            else
+                txtEmpId.setEditable(false);
+        }
+        else{
+            if (evt.getExtendedKeyCode()== KeyEvent.VK_BACK_SPACE || evt.getExtendedKeyCode()== KeyEvent.VK_DELETE){
+                txtEmpId.setEditable(true);
+            }else{
+                txtEmpId.setEditable(false);   
+            }
+        }
+    }//GEN-LAST:event_txtEmpIdKeyPressed
+
+    private void txtAgeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAgeKeyPressed
+        // TODO add your handling code here:
+        
+        String empId = txtAge.getText();
+        int len = empId.length();
+        
+        if(evt.getKeyChar() >= '0' && evt.getKeyChar() <= '9'){
+            if(len < 3)
+                txtAge.setEditable(true);
+            else
+                txtAge.setEditable(false);
+        }
+        else{
+            if (evt.getExtendedKeyCode()== KeyEvent.VK_BACK_SPACE || evt.getExtendedKeyCode()== KeyEvent.VK_DELETE){
+                txtAge.setEditable(true);
+            }else{
+                txtAge.setEditable(false);   
+            }
+        }
+    }//GEN-LAST:event_txtAgeKeyPressed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAttachImg;

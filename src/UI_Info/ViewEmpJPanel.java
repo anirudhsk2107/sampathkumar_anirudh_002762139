@@ -22,7 +22,7 @@ import javax.swing.table.TableRowSorter;
 
 /**
  *
- * @author Anirudh
+ * @author Anirudh 
  */
 public class ViewEmpJPanel extends javax.swing.JPanel {
 
@@ -661,7 +661,7 @@ public class ViewEmpJPanel extends javax.swing.JPanel {
         int len = empId.length();
         
         if(evt.getKeyChar() >= '0' && evt.getKeyChar() <= '9'){
-            if(len < 10)
+            if(len < 9)
                 txtEmpId.setEditable(true);
             else
                 txtEmpId.setEditable(false);

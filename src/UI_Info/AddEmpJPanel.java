@@ -43,8 +43,6 @@ public class AddEmpJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        utilDateModel1 = new org.jdatepicker.impl.UtilDateModel();
-        jDatePickerUtil1 = new org.jdatepicker.util.JDatePickerUtil();
         lblTitle = new javax.swing.JLabel();
         lblName = new javax.swing.JLabel();
         lblEmpId = new javax.swing.JLabel();
@@ -439,7 +437,7 @@ public class AddEmpJPanel extends javax.swing.JPanel {
         int len = empId.length();
         
         if(evt.getKeyChar() >= '0' && evt.getKeyChar() <= '9'){
-            if(len < 10)
+            if(len < 9)
                 txtEmpId.setEditable(true);
             else
                 txtEmpId.setEditable(false);
@@ -480,7 +478,6 @@ public class AddEmpJPanel extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> cbGender;
     private javax.swing.JComboBox<String> cbLevel;
     private com.toedter.calendar.JDateChooser dtStrtDate;
-    private org.jdatepicker.util.JDatePickerUtil jDatePickerUtil1;
     private javax.swing.JLabel lblAge;
     private javax.swing.JLabel lblEmailAdd;
     private javax.swing.JLabel lblEmailErr;
@@ -502,6 +499,5 @@ public class AddEmpJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtPhoneNo;
     private javax.swing.JTextField txtPosTitle;
     private javax.swing.JTextField txtTeamInfo;
-    private org.jdatepicker.impl.UtilDateModel utilDateModel1;
     // End of variables declaration//GEN-END:variables
 }

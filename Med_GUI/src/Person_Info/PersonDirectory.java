@@ -21,39 +21,30 @@ public class PersonDirectory {
         
         person.setUserName("sysadmin");
         person.setPassword("sysadmin");
-        person.setId();
+        person.setId(1);
         person.setRole("SysAdmin");
+        person.setEmail("sysadmin@gmail.com");
+        person.setGender("Male");
         personList.add(person);
         
         //Test Data
         person = new Person();
         person.setUserName("hospadmin");
         person.setPassword("hospadmin");
-        person.setId();
+        person.setId(2);
         person.setRole("HospAdmin");
+        person.setEmail("hospadmin@gmail.com");
+        person.setGender("Female");
         personList.add(person);
         
         person = new Person();
         person.setUserName("commadmin");
         person.setPassword("commadmin");
-        person.setId();
+        person.setId(3);
         person.setRole("CommAdmin");
+        person.setEmail("commadmin@gmail.com");
+        person.setGender("Male");
         personList.add(person);
-        
-        person = new Person();
-        person.setUserName("doctor");
-        person.setPassword("doctor");
-        person.setId();
-        person.setRole("Doctor");
-        personList.add(person);
-        
-        person = new Person();
-        person.setUserName("patient");
-        person.setPassword("patient");
-        person.setId();
-        person.setRole("Patient");
-        personList.add(person);
-        
     }
     
     public static ArrayList<Person> getPersonList() {

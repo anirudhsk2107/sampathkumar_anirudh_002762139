@@ -21,6 +21,15 @@ public class Doctor {
     private String appointment;
     private String specialization;
     private String hospital;
+    private String Gender;
+
+    public String getGender() {
+        return Gender;
+    }
+
+    public void setGender(String Gender) {
+        this.Gender = Gender;
+    }
 
     public int getPersonId() {
         return personId;

@@ -22,8 +22,15 @@ public class DoctorDirectory {
     }
     
     public Doctor AddNewDoctor(Doctor newDoctor){
-        //Person newPerson = new Person();
         doctorList.add(newDoctor);
         return newDoctor;
+    }
+    
+    public Doctor GetDoctorById(int id){
+        for(Doctor doc : doctorList){
+            if(doc.getPersonId() == id)
+                return doc;
+        }
+        return null;
     }
 }

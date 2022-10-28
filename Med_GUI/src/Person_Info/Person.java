@@ -10,17 +10,35 @@ package Person_Info;
  */
 public class Person {
     
-    static int id;
+    int id;
     String userName;
     String password;
     String role;
+    String email;
+    String Gender; 
+
+    public String getGender() {
+        return Gender;
+    }
+
+    public void setGender(String Gender) {
+        this.Gender = Gender;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     public int getId() {
         return id;
     }
 
-    public void setId() {
-        this.id++;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getUserName() {
@@ -46,4 +64,10 @@ public class Person {
     public void setRole(String role) {
         this.role = role;
     }
+    
+    @Override
+    public String toString(){
+        return String.valueOf(id);
+    }
 }
+

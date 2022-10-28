@@ -4,6 +4,8 @@
  */
 package System_Info;
 
+import Appointment_Info.EncounterHistory;
+import Location_Info.HospitalDirectory;
 import Person_Info.Doctor;
 import Person_Info.DoctorDirectory;
 import Person_Info.Patient;
@@ -19,14 +21,18 @@ import java.util.ArrayList;
  */
 public class SystemData {
     
-    private PersonDirectory personList;
-    private DoctorDirectory doctorList;
-    private PatientDirectory patientList;
+    private PersonDirectory personList = new PersonDirectory();;
+    private DoctorDirectory doctorList = new DoctorDirectory();;
+    private PatientDirectory patientList = new PatientDirectory();
+    private HospitalDirectory hospitalList = new HospitalDirectory();
+    private EncounterHistory encounterList = new EncounterHistory();
 
     public SystemData(){
-        personList = new PersonDirectory();
-        doctorList = new DoctorDirectory();
-        patientList = new PatientDirectory();
+//        personList = new PersonDirectory();
+//        doctorList = new DoctorDirectory();
+//        patientList = new PatientDirectory();
+//        hospitalList = new HospitalDirectory();
+//        encounterList = new EncounterHistory();
     }
     
     public ArrayList<Doctor> getDoctorList() {
@@ -48,7 +54,15 @@ public class SystemData {
     public void DeletePerson (Person person){
         personList.DeletePerson(person);
     }
-       
+
+    public PatientDirectory getPatientList() {
+        return patientList;
+    }
+
+    public void setPatientList(PatientDirectory patientList) {
+        this.patientList = patientList;
+    }
+     
     public Person AddNewPerson(){
         Person newPerson = new Person();
         personList.AddNewPerson(newPerson);
@@ -61,12 +75,17 @@ public class SystemData {
         return newDoctor;
     }
     
-        
-//    public ArrayList<Patient> getPatientList() {
-//        return patientList.;
-//    }
-//
-//    public void setPatientList(PatientDirectory patientList) {
-//        this.patientList = patientList;
-//    }
+    public Patient AddNewPatient(){
+        Patient newPatient = new Patient();
+        patientList.AddNewPatient(newPatient);
+        return newPatient;
+    }
+    
+    public Doctor GetDoctorById(int id){
+        return doctorList.GetDoctorById(id);
+    }
+    
+    public Patient GetPatientById(int id){
+        return patientList.GetPatientById(id);
+    }
 }

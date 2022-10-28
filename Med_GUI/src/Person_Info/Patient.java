@@ -18,8 +18,25 @@ public class Patient {
     private String City;
     private String Community;
     private String House;
-    private char gender;
     private int age;
+    private int zipCode;
+    private String DocName;
+
+    public String getDocName() {
+        return DocName;
+    }
+
+    public void setDocName(String DocName) {
+        this.DocName = DocName;
+    }
+
+    public int getZipCode() {
+        return zipCode;
+    }
+
+    public void setZipCode(int zipCode) {
+        this.zipCode = zipCode;
+    }
 
     public int getAge() {
         return age;
@@ -51,14 +68,6 @@ public class Patient {
 
     public void setHouse(String House) {
         this.House = House;
-    }
-
-    public char getGender() {
-        return gender;
-    }
-
-    public void setGender(char gender) {
-        this.gender = gender;
     }
 
     public String getfName() {

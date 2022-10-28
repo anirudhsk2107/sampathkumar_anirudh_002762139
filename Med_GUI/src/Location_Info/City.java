@@ -9,13 +9,22 @@ package Location_Info;
  * @author Anirudh
  */
 public class City {
-    private String CityName;
+    private String cityName;
+    private Community community; 
+
+    public Community getCommunity() {
+        return community;
+    }
+
+    public void setCommunity(Community community) {
+        this.community = community;
+    }
 
     public String getCityName() {
-        return CityName;
+        return cityName;
     }
 
     public void setCityName(String CityName) {
-        this.CityName = CityName;
+        this.cityName = CityName;
     }
 }

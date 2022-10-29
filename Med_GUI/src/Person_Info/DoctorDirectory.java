@@ -33,4 +33,11 @@ public class DoctorDirectory {
         }
         return null;
     }
+    
+    public void DeleteDoctorById(int id){
+        for(Doctor doc : doctorList){
+            if(doc.getPersonId() == id)
+                doctorList.remove(doc);
+        }
+    }
 }

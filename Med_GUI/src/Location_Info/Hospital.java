@@ -10,7 +10,6 @@ package Location_Info;
  */
 public class Hospital {
     
-    private int hospId;
     private String hospName;
     private City city;
     private Community community;
@@ -21,14 +20,6 @@ public class Hospital {
 
     public void setCommunity(String community) {
         this.community.setCommunityName(community);
-    }
-
-    public int getHospId() {
-        return hospId;
-    }
-
-    public void setHospId(int hospId) {
-        this.hospId = hospId;
     }
 
     public String getHospName() {

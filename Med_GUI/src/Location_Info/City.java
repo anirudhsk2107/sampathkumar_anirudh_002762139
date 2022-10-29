@@ -10,15 +10,6 @@ package Location_Info;
  */
 public class City {
     private String cityName;
-    private Community community; 
-
-    public Community getCommunity() {
-        return community;
-    }
-
-    public void setCommunity(Community community) {
-        this.community = community;
-    }
 
     public String getCityName() {
         return cityName;

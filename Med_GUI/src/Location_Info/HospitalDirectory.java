@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class HospitalDirectory {
     
     private ArrayList<Hospital> hospitalList;
-
+    
     public ArrayList<Hospital> getHospitalList() {
         return hospitalList;
     }
@@ -24,6 +24,19 @@ public class HospitalDirectory {
     
     public HospitalDirectory(){
         this.hospitalList  = new ArrayList<Hospital>();
+        
+        Hospital hospital = new Hospital();
+        hospital.setHospName("Hospital 1");
+        hospitalList.add(hospital);
+        hospital = new Hospital();
+        hospital.setHospName("Hospital 2");
+        hospitalList.add(hospital);
+        hospital = new Hospital();
+        hospital.setHospName("Hospital 3");
+        hospitalList.add(hospital);
+        hospital = new Hospital();
+        hospital.setHospName("Hospital 4");
+        hospitalList.add(hospital);
     }
     
     public Hospital AddNewHospital(){

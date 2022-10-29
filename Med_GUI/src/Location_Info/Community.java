@@ -11,15 +11,6 @@ package Location_Info;
 public class Community {
     
     private String communityName;
-    private City City;
-
-    public City getCity() {
-        return City;
-    }
-
-    public void setCity(City City) {
-        this.City = City;
-    }
 
     public String getCommunityName() {
         return communityName;

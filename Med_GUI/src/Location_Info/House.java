@@ -36,7 +36,5 @@ public class House {
 
     public void setHouseName(String HouseName) {
         this.HouseName = HouseName;
-    }
-
-    
+    }    
 }

@@ -34,4 +34,11 @@ public class PatientDirectory {
         }
         return null;
     }
+    
+    public void DeletePatientById(int id){
+        for(Patient pat : patientList){
+            if(pat.getPersonId() == id)
+                patientList.remove(pat);
+        }
+    }
 }

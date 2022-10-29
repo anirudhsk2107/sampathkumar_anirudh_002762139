@@ -4,6 +4,8 @@
  */
 package Person_Info;
 
+import Location_Info.Hospital;
+
 /**
  *
  * @author Anirudh
@@ -20,7 +22,7 @@ public class Doctor {
     private String house;
     private String appointment;
     private String specialization;
-    private String hospital;
+    private Hospital hospital;
     private String Gender;
 
     public String getGender() {
@@ -109,15 +111,13 @@ public class Doctor {
 
     public void setSpecialization(String specialization) {
         this.specialization = specialization;
-    }
+    }    
 
-    public String getHospital() {
+    public Hospital getHospital() {
         return hospital;
     }
 
-    public void setHospital(String hospital) {
+    public void setHospital(Hospital hospital) {
         this.hospital = hospital;
     }
-    
-    
 }

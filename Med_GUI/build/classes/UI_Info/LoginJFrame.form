@@ -295,7 +295,7 @@
                                           <Group type="102" alignment="0" attributes="0">
                                               <Component id="lblHouse" min="-2" pref="150" max="-2" attributes="0"/>
                                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="txtNewUserHouse" max="32767" attributes="0"/>
+                                              <Component id="cbNewUserHouse" max="32767" attributes="0"/>
                                           </Group>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="lblAddressDetails" alignment="0" min="-2" pref="368" max="-2" attributes="0"/>
@@ -362,7 +362,7 @@
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="lblPatientDetails" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                               <Component id="lblHouse" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                              <Component id="txtNewUserHouse" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="cbNewUserHouse" alignment="3" pref="31" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -997,8 +997,6 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JTextField" name="txtNewUserHouse">
-        </Component>
         <Component class="javax.swing.JComboBox" name="cbNewUserCity">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
@@ -1010,6 +1008,16 @@
           </AuxValues>
         </Component>
         <Component class="javax.swing.JComboBox" name="cbNewUserCommunity">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="0"/>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="cbNewUserHouse">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="0"/>
@@ -2925,7 +2933,12 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblAppointment" min="-2" pref="122" max="-2" attributes="0"/>
+                      <Component id="txtPatNameEncounter1" alignment="0" min="-2" pref="122" max="-2" attributes="0"/>
+                      <Component id="lblDocNameEncounter1" alignment="0" min="-2" pref="122" max="-2" attributes="0"/>
+                      <Component id="lblCityEncounter" min="-2" pref="122" max="-2" attributes="0"/>
+                      <Component id="txtPatNameEncounter" min="-2" pref="122" max="-2" attributes="0"/>
+                      <Component id="lblDocNameEncounter" min="-2" pref="122" max="-2" attributes="0"/>
                       <Component id="lblEncouter" min="-2" pref="270" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="1014" max="32767" attributes="0"/>
@@ -2937,9 +2950,19 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                   <Component id="lblEncouter" min="-2" pref="44" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
-                  <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="571" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+                  <Component id="txtPatNameEncounter" min="-2" pref="27" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="lblCityEncounter" min="-2" pref="27" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="lblDocNameEncounter1" min="-2" pref="27" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="txtPatNameEncounter1" min="-2" pref="27" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="lblDocNameEncounter" min="-2" pref="27" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="lblAppointment" min="-2" pref="27" max="-2" attributes="0"/>
+                  <EmptySpace pref="392" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -2951,7 +2974,7 @@
               <Font name="Helvetica Neue" size="18" style="0"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="Encounter"/>
+            <Property name="text" type="java.lang.String" value="Add New Encounter"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                 <LineBorder/>
@@ -2959,9 +2982,34 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel4">
+        <Component class="javax.swing.JLabel" name="lblDocNameEncounter">
           <Properties>
-            <Property name="text" type="java.lang.String" value="jLabel4"/>
+            <Property name="text" type="java.lang.String" value="Doctor Name"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="txtPatNameEncounter">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Patient Name"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblCityEncounter">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="City Name"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblAppointment">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Appointment"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="txtPatNameEncounter1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Hospital Name"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblDocNameEncounter1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Community Name"/>
           </Properties>
         </Component>
       </SubComponents>

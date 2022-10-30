@@ -90,9 +90,9 @@ public class LoginJFrame extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         lblNewDoctorCity = new javax.swing.JLabel();
         cbNewDoctorCity = new javax.swing.JComboBox<>();
-        txtNewUserHouse = new javax.swing.JTextField();
         cbNewUserCity = new javax.swing.JComboBox<>();
         cbNewUserCommunity = new javax.swing.JComboBox<>();
+        cbNewUserHouse = new javax.swing.JComboBox<>();
         WelcomeJPanel = new javax.swing.JPanel();
         lblWelcome = new javax.swing.JLabel();
         btnAddPatient = new javax.swing.JButton();
@@ -207,7 +207,12 @@ public class LoginJFrame extends javax.swing.JFrame {
         btnBackViewEditLoc = new javax.swing.JButton();
         AddNewEncounterPanel = new javax.swing.JPanel();
         lblEncouter = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        lblDocNameEncounter = new javax.swing.JLabel();
+        txtPatNameEncounter = new javax.swing.JLabel();
+        lblCityEncounter = new javax.swing.JLabel();
+        lblAppointment = new javax.swing.JLabel();
+        txtPatNameEncounter1 = new javax.swing.JLabel();
+        lblDocNameEncounter1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.CardLayout());
@@ -622,7 +627,7 @@ public class LoginJFrame extends javax.swing.JFrame {
                                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, NewUserJPanelLayout.createSequentialGroup()
                                             .addComponent(lblHouse, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addComponent(txtNewUserHouse))
+                                            .addComponent(cbNewUserHouse, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                         .addGroup(NewUserJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(lblAddressDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGroup(NewUserJPanelLayout.createSequentialGroup()
@@ -672,7 +677,7 @@ public class LoginJFrame extends javax.swing.JFrame {
                         .addGroup(NewUserJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblPatientDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblHouse, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtNewUserHouse, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(cbNewUserHouse, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addGroup(NewUserJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblAge, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1797,10 +1802,20 @@ public class LoginJFrame extends javax.swing.JFrame {
 
         lblEncouter.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         lblEncouter.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblEncouter.setText("Encounter");
+        lblEncouter.setText("Add New Encounter");
         lblEncouter.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel4.setText("jLabel4");
+        lblDocNameEncounter.setText("Doctor Name");
+
+        txtPatNameEncounter.setText("Patient Name");
+
+        lblCityEncounter.setText("City Name");
+
+        lblAppointment.setText("Appointment");
+
+        txtPatNameEncounter1.setText("Hospital Name");
+
+        lblDocNameEncounter1.setText("Community Name");
 
         javax.swing.GroupLayout AddNewEncounterPanelLayout = new javax.swing.GroupLayout(AddNewEncounterPanel);
         AddNewEncounterPanel.setLayout(AddNewEncounterPanelLayout);
@@ -1809,7 +1824,12 @@ public class LoginJFrame extends javax.swing.JFrame {
             .addGroup(AddNewEncounterPanelLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addGroup(AddNewEncounterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
+                    .addComponent(lblAppointment, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtPatNameEncounter1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblDocNameEncounter1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblCityEncounter, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtPatNameEncounter, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblDocNameEncounter, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblEncouter, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(1014, Short.MAX_VALUE))
         );
@@ -1818,9 +1838,19 @@ public class LoginJFrame extends javax.swing.JFrame {
             .addGroup(AddNewEncounterPanelLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(lblEncouter, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60)
-                .addComponent(jLabel4)
-                .addContainerGap(571, Short.MAX_VALUE))
+                .addGap(64, 64, 64)
+                .addComponent(txtPatNameEncounter, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblCityEncounter, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblDocNameEncounter1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtPatNameEncounter1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblDocNameEncounter, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblAppointment, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(392, Short.MAX_VALUE))
         );
 
         getContentPane().add(AddNewEncounterPanel, "card8");
@@ -1840,6 +1870,7 @@ public class LoginJFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         String userName = txtUserName.getText();
         String password = new String(pwdLoginPassword.getPassword());
+        boolean flag = false;
 
         if(userName.equals("") || password.equals(""))
         JOptionPane.showMessageDialog(this, "Please enter User Name and/or Password.");
@@ -1848,20 +1879,27 @@ public class LoginJFrame extends javax.swing.JFrame {
             for(Person person : system.getPersonList())
             {
                 if(person.getUserName().equals(userName) && person.getPassword().equals(password))
-                {
-                    //JOptionPane.showMessageDialog(this, "User Name and/or Password.");
-                    
+                {   
                     LoginJPanel.setVisible(false);
                     WelcomeJPanel.setVisible(true);
                     NewUserJPanel.setVisible(false);
-                    
+                    flag = true;
                     globalRole = person.getRole();
+                    
+                    if(!globalRole.equals("sysadmin") || !globalRole.equals("hospadmin")){
+                        btnAddPatient.setVisible(false);
+                        btnEditPatient.setVisible(false);
+                        btnAddNewEncounter.setVisible(false);
+                        btnViewEditEncounter.setVisible(false);
+                    }
+                        
                     break;
                 }
-                else
-                    JOptionPane.showMessageDialog(this, "Please enter a valid user name and password.");
             }
         }
+        
+        if(!flag)
+            JOptionPane.showMessageDialog(this, "Please enter a valid user name and password.");
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void btnEditPatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditPatientActionPerformed
@@ -1910,6 +1948,9 @@ public class LoginJFrame extends javax.swing.JFrame {
         
         for(Hospital hospital : system.getHospitalList().getHospitalList())
             cbNewUserHospital.addItem(hospital.getHospName());
+        
+        for(House house : system.getHouseList())
+            cbNewUserHouse.addItem(house.getHouseName());
     }//GEN-LAST:event_btnAddPatientActionPerformed
 
     private void btnViewPersonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewPersonActionPerformed
@@ -2286,7 +2327,7 @@ public class LoginJFrame extends javax.swing.JFrame {
             doctor.setEmail(txtEmailId.getText());
             doctor.setCity(cbNewUserCity.getSelectedItem().toString());
             doctor.setCommunity(cbNewUserCommunity.getSelectedItem().toString());
-            doctor.setHouse(txtNewUserHouse.getText());
+            doctor.setHouse(cbNewUserHouse.getSelectedItem().toString());
             doctor.setHospital(hospital);
             doctor.setSpecialization(cbNewUserSpecialization.getSelectedItem().toString());
         }
@@ -2301,7 +2342,7 @@ public class LoginJFrame extends javax.swing.JFrame {
             patient.setEmail(txtEmailId.getText());
             patient.setCity(cbNewUserCity.getSelectedItem().toString());
             patient.setCommunity(cbNewUserCommunity.getSelectedItem().toString());
-            patient.setHouse(txtNewUserHouse.getText());
+            patient.setHouse(cbNewUserHouse.getSelectedItem().toString());
             patient.setAge(Integer.parseInt(txtAge.getText()));
             patient.setZipCode(Integer.parseInt(txtZipCode.getText()));
             patient.setAge(Integer.parseInt(txtAge.getText()));
@@ -3013,6 +3054,7 @@ public class LoginJFrame extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbNewUserCity;
     private javax.swing.JComboBox<String> cbNewUserCommunity;
     private javax.swing.JComboBox<String> cbNewUserHospital;
+    private javax.swing.JComboBox<String> cbNewUserHouse;
     private javax.swing.JComboBox<String> cbNewUserSpecialization;
     private javax.swing.JComboBox<String> cbRole;
     private javax.swing.JComboBox<String> cbRoleUpdate;
@@ -3023,7 +3065,6 @@ public class LoginJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPaneCity;
     private javax.swing.JScrollPane jScrollPaneCommunity;
@@ -3035,10 +3076,14 @@ public class LoginJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel lblAddNewHouse;
     private javax.swing.JLabel lblAddressDetails;
     private javax.swing.JLabel lblAge;
+    private javax.swing.JLabel lblAppointment;
     private javax.swing.JLabel lblCity2;
+    private javax.swing.JLabel lblCityEncounter;
     private javax.swing.JLabel lblCityUpdate;
     private javax.swing.JLabel lblCommunity;
     private javax.swing.JLabel lblCommunityUpdate;
+    private javax.swing.JLabel lblDocNameEncounter;
+    private javax.swing.JLabel lblDocNameEncounter1;
     private javax.swing.JLabel lblDocUpdateHospital;
     private javax.swing.JLabel lblDoctorDetails;
     private javax.swing.JLabel lblEmailId;
@@ -3114,9 +3159,10 @@ public class LoginJFrame extends javax.swing.JFrame {
     private javax.swing.JTextField txtNewHospital;
     private javax.swing.JTextField txtNewHouse;
     private javax.swing.JPasswordField txtNewPassword;
-    private javax.swing.JTextField txtNewUserHouse;
     private javax.swing.JTextField txtNewUserName;
     private javax.swing.JPasswordField txtPasswordUpdate;
+    private javax.swing.JLabel txtPatNameEncounter;
+    private javax.swing.JLabel txtPatNameEncounter1;
     private javax.swing.JTextField txtPhoneNo;
     private javax.swing.JTextField txtPhoneNoUpdate;
     private javax.swing.JTextField txtUserName;

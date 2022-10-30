@@ -57,6 +57,4 @@ public class Encounter {
     public void setAppointment(Date appointment) {
         this.appointment = appointment;
     }
-    
-    
 }

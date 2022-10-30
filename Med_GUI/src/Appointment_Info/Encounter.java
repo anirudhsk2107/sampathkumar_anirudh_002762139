@@ -57,4 +57,9 @@ public class Encounter {
     public void setAppointment(Date appointment) {
         this.appointment = appointment;
     }
+    
+    @Override
+    public String toString(){
+        return doctor.getDoctorName();
+    }
 }

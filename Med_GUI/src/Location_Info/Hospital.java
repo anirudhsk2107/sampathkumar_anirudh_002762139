@@ -14,6 +14,11 @@ public class Hospital {
     private City city;
     private Community community;
 
+    public Hospital(){
+        city = new City();
+        community = new Community();
+    }
+    
     public Community getCommunity() {
         return community;
     }
@@ -36,5 +41,10 @@ public class Hospital {
 
     public void setCity(String city) {
         this.city.setCityName(city);
+    }
+    
+    @Override
+    public String toString(){
+        return this.hospName;
     }
 }

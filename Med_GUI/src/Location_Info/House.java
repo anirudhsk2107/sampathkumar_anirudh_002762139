@@ -11,23 +11,28 @@ package Location_Info;
 public class House {
     
     private City City ;
-    private Community Community;
+    private Community community;
     private String HouseName;
 
+    public House(){
+        this.City = new City();
+        this.community = new Community();
+    }
+    
     public City getCity() {
         return City;
     }
 
-    public void setCity(City City) {
-        this.City = City;
+    public void setCity(String City) {
+        this.City.setCityName(City);
     }
 
     public Community getCommunity() {
-        return Community;
+        return community;
     }
 
-    public void setCommunity(Community Community) {
-        this.Community = Community;
+    public void setCommunity(String community) {
+        this.community.setCommunityName(community);
     }
 
     public String getHouseName() {
@@ -37,4 +42,9 @@ public class House {
     public void setHouseName(String HouseName) {
         this.HouseName = HouseName;
     }    
+    
+    @Override
+    public String toString(){
+        return this.HouseName;
+    }
 }

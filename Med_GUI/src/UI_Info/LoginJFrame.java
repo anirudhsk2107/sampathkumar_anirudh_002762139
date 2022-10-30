@@ -99,7 +99,10 @@ public class LoginJFrame extends javax.swing.JFrame {
         btnViewEditLocation = new javax.swing.JButton();
         btnEditPatient = new javax.swing.JButton();
         btnAddNewLocation = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        btnAddNewEncounter = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        btnViewEditEncounter = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
         ViewEditUserJPanel = new javax.swing.JPanel();
         lblTitle = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -172,6 +175,39 @@ public class LoginJFrame extends javax.swing.JFrame {
         lblNewHouseCity = new javax.swing.JLabel();
         lblNewHouseCommunity = new javax.swing.JLabel();
         ViewEditLocationJPanel = new javax.swing.JPanel();
+        jScrollPaneHouse = new javax.swing.JScrollPane();
+        tblHouse = new javax.swing.JTable();
+        jScrollPaneCity = new javax.swing.JScrollPane();
+        tblCity = new javax.swing.JTable();
+        jScrollPaneCommunity = new javax.swing.JScrollPane();
+        tblCommmunity = new javax.swing.JTable();
+        jScrollPaneHospital = new javax.swing.JScrollPane();
+        tblHospital = new javax.swing.JTable();
+        lblViewEditLocation = new javax.swing.JLabel();
+        lblViewEditCommunity = new javax.swing.JLabel();
+        lblViewEditHospital = new javax.swing.JLabel();
+        lblViewEditCity = new javax.swing.JLabel();
+        lblViewEditHouse = new javax.swing.JLabel();
+        lblViewEditCityName = new javax.swing.JLabel();
+        lblViewEditCommunityName = new javax.swing.JLabel();
+        txtViewEditCityName = new javax.swing.JTextField();
+        txtViewEditCommunityName = new javax.swing.JTextField();
+        btnSubmitCityCommunity = new javax.swing.JButton();
+        cbCityHouseHospUpdate = new javax.swing.JComboBox<>();
+        cbCommHouseHospUpdate = new javax.swing.JComboBox<>();
+        txtViewEditHospitalName = new javax.swing.JTextField();
+        txtViewEditHouseName = new javax.swing.JTextField();
+        btnUpdateHouseHosp = new javax.swing.JButton();
+        btnEditCommunity = new javax.swing.JButton();
+        btnEditCity = new javax.swing.JButton();
+        btnEditHospital = new javax.swing.JButton();
+        btnViewHospital = new javax.swing.JButton();
+        btnEditHouse = new javax.swing.JButton();
+        btnViewHouse = new javax.swing.JButton();
+        btnBackViewEditLoc = new javax.swing.JButton();
+        AddNewEncounterPanel = new javax.swing.JPanel();
+        lblEncouter = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.CardLayout());
@@ -743,11 +779,34 @@ public class LoginJFrame extends javax.swing.JFrame {
             }
         });
 
-        jButton5.setText("jButton1");
-        jButton5.setMaximumSize(new java.awt.Dimension(100, 30));
-        jButton5.setMinimumSize(new java.awt.Dimension(100, 30));
-        jButton5.setPreferredSize(new java.awt.Dimension(100, 30));
-        jButton5.setSize(new java.awt.Dimension(100, 30));
+        btnAddNewEncounter.setText("Add New Encounter");
+        btnAddNewEncounter.setMaximumSize(new java.awt.Dimension(100, 30));
+        btnAddNewEncounter.setMinimumSize(new java.awt.Dimension(100, 30));
+        btnAddNewEncounter.setPreferredSize(new java.awt.Dimension(100, 30));
+        btnAddNewEncounter.setSize(new java.awt.Dimension(100, 30));
+        btnAddNewEncounter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddNewEncounterActionPerformed(evt);
+            }
+        });
+
+        jButton6.setText("jButton1");
+        jButton6.setMaximumSize(new java.awt.Dimension(100, 30));
+        jButton6.setMinimumSize(new java.awt.Dimension(100, 30));
+        jButton6.setPreferredSize(new java.awt.Dimension(100, 30));
+        jButton6.setSize(new java.awt.Dimension(100, 30));
+
+        btnViewEditEncounter.setText("View/Edit Encounter");
+        btnViewEditEncounter.setMaximumSize(new java.awt.Dimension(100, 30));
+        btnViewEditEncounter.setMinimumSize(new java.awt.Dimension(100, 30));
+        btnViewEditEncounter.setPreferredSize(new java.awt.Dimension(100, 30));
+        btnViewEditEncounter.setSize(new java.awt.Dimension(100, 30));
+
+        jButton8.setText("jButton1");
+        jButton8.setMaximumSize(new java.awt.Dimension(100, 30));
+        jButton8.setMinimumSize(new java.awt.Dimension(100, 30));
+        jButton8.setPreferredSize(new java.awt.Dimension(100, 30));
+        jButton8.setSize(new java.awt.Dimension(100, 30));
 
         javax.swing.GroupLayout WelcomeJPanelLayout = new javax.swing.GroupLayout(WelcomeJPanel);
         WelcomeJPanel.setLayout(WelcomeJPanelLayout);
@@ -756,9 +815,16 @@ public class LoginJFrame extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, WelcomeJPanelLayout.createSequentialGroup()
                 .addContainerGap(100, Short.MAX_VALUE)
                 .addGroup(WelcomeJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblWelcome, javax.swing.GroupLayout.PREFERRED_SIZE, 1100, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(WelcomeJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(WelcomeJPanelLayout.createSequentialGroup()
+                            .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, WelcomeJPanelLayout.createSequentialGroup()
+                            .addComponent(btnAddNewEncounter, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnViewEditEncounter, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(WelcomeJPanelLayout.createSequentialGroup()
                             .addComponent(btnAddNewLocation, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -783,8 +849,14 @@ public class LoginJFrame extends javax.swing.JFrame {
                     .addComponent(btnAddNewLocation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnViewEditLocation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(269, Short.MAX_VALUE))
+                .addGroup(WelcomeJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAddNewEncounter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnViewEditEncounter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(32, 32, 32)
+                .addGroup(WelcomeJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(207, Short.MAX_VALUE))
         );
 
         getContentPane().add(WelcomeJPanel, "card4");
@@ -1451,18 +1523,307 @@ public class LoginJFrame extends javax.swing.JFrame {
 
         getContentPane().add(NewLocationJPanel, "card6");
 
+        tblHouse.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "House", "Community", "City"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPaneHouse.setViewportView(tblHouse);
+
+        tblCity.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null},
+                {null},
+                {null},
+                {null}
+            },
+            new String [] {
+                "City"
+            }
+        ));
+        jScrollPaneCity.setViewportView(tblCity);
+
+        tblCommmunity.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null},
+                {null},
+                {null},
+                {null}
+            },
+            new String [] {
+                "Community"
+            }
+        ));
+        jScrollPaneCommunity.setViewportView(tblCommmunity);
+
+        tblHospital.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Hospital", "Community", "City"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPaneHospital.setViewportView(tblHospital);
+
+        lblViewEditLocation.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        lblViewEditLocation.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblViewEditLocation.setText("View/Edit Locations");
+
+        lblViewEditCommunity.setText("Community");
+
+        lblViewEditHospital.setText("Hospital");
+
+        lblViewEditCity.setText("City");
+
+        lblViewEditHouse.setText("House");
+
+        lblViewEditCityName.setText("City");
+
+        lblViewEditCommunityName.setText("Community");
+
+        btnSubmitCityCommunity.setText("Submit");
+        btnSubmitCityCommunity.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSubmitCityCommunityActionPerformed(evt);
+            }
+        });
+
+        btnUpdateHouseHosp.setText("Submit");
+        btnUpdateHouseHosp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdateHouseHospActionPerformed(evt);
+            }
+        });
+
+        btnEditCommunity.setText("Edit");
+        btnEditCommunity.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditCommunityActionPerformed(evt);
+            }
+        });
+
+        btnEditCity.setText("Edit");
+        btnEditCity.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditCityActionPerformed(evt);
+            }
+        });
+
+        btnEditHospital.setText("Edit");
+        btnEditHospital.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditHospitalActionPerformed(evt);
+            }
+        });
+
+        btnViewHospital.setText("View");
+        btnViewHospital.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewHospitalActionPerformed(evt);
+            }
+        });
+
+        btnEditHouse.setText("Edit");
+        btnEditHouse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditHouseActionPerformed(evt);
+            }
+        });
+
+        btnViewHouse.setText("View");
+        btnViewHouse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewHouseActionPerformed(evt);
+            }
+        });
+
+        btnBackViewEditLoc.setText("Back");
+        btnBackViewEditLoc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackViewEditLocActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout ViewEditLocationJPanelLayout = new javax.swing.GroupLayout(ViewEditLocationJPanel);
         ViewEditLocationJPanel.setLayout(ViewEditLocationJPanelLayout);
         ViewEditLocationJPanelLayout.setHorizontalGroup(
             ViewEditLocationJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1300, Short.MAX_VALUE)
+            .addGroup(ViewEditLocationJPanelLayout.createSequentialGroup()
+                .addGroup(ViewEditLocationJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ViewEditLocationJPanelLayout.createSequentialGroup()
+                        .addGap(52, 52, 52)
+                        .addGroup(ViewEditLocationJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPaneCity, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(ViewEditLocationJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(lblViewEditCommunityName, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lblViewEditCityName, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(ViewEditLocationJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtViewEditCityName)
+                            .addComponent(jScrollPaneCommunity, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
+                            .addComponent(txtViewEditCommunityName))
+                        .addGap(50, 50, 50))
+                    .addGroup(ViewEditLocationJPanelLayout.createSequentialGroup()
+                        .addGap(170, 170, 170)
+                        .addGroup(ViewEditLocationJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnBackViewEditLoc, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnSubmitCityCommunity, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 157, Short.MAX_VALUE)))
+                .addGroup(ViewEditLocationJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPaneHospital, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ViewEditLocationJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(lblViewEditCommunity, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblViewEditHospital, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblViewEditCity, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblViewEditHouse, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(54, 54, 54)
+                .addGroup(ViewEditLocationJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPaneHouse, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(ViewEditLocationJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(txtViewEditHouseName, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(txtViewEditHospitalName, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(cbCityHouseHospUpdate, javax.swing.GroupLayout.Alignment.LEADING, 0, 200, Short.MAX_VALUE)
+                        .addComponent(cbCommHouseHospUpdate, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(27, 27, 27))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ViewEditLocationJPanelLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btnUpdateHouseHosp, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(303, 303, 303))
+            .addGroup(ViewEditLocationJPanelLayout.createSequentialGroup()
+                .addGap(103, 103, 103)
+                .addComponent(btnEditCity)
+                .addGap(145, 145, 145)
+                .addComponent(btnEditCommunity)
+                .addGap(177, 177, 177)
+                .addComponent(btnViewHospital)
+                .addGap(29, 29, 29)
+                .addComponent(btnEditHospital)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnEditHouse)
+                .addGap(29, 29, 29)
+                .addComponent(btnViewHouse)
+                .addGap(113, 113, 113))
+            .addGroup(ViewEditLocationJPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblViewEditLocation, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         ViewEditLocationJPanelLayout.setVerticalGroup(
             ViewEditLocationJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 708, Short.MAX_VALUE)
+            .addGroup(ViewEditLocationJPanelLayout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(lblViewEditLocation, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addGroup(ViewEditLocationJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPaneHouse, javax.swing.GroupLayout.DEFAULT_SIZE, 343, Short.MAX_VALUE)
+                    .addComponent(jScrollPaneHospital, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jScrollPaneCommunity, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jScrollPaneCity, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(ViewEditLocationJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnEditCommunity)
+                    .addComponent(btnEditCity)
+                    .addComponent(btnEditHospital)
+                    .addComponent(btnViewHospital)
+                    .addComponent(btnViewHouse)
+                    .addComponent(btnEditHouse))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addGroup(ViewEditLocationJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ViewEditLocationJPanelLayout.createSequentialGroup()
+                        .addGroup(ViewEditLocationJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblViewEditCity, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cbCityHouseHospUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(ViewEditLocationJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblViewEditCommunity, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cbCommHouseHospUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(ViewEditLocationJPanelLayout.createSequentialGroup()
+                        .addGroup(ViewEditLocationJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtViewEditCityName)
+                            .addComponent(lblViewEditCityName, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(ViewEditLocationJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(lblViewEditCommunityName, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+                            .addComponent(txtViewEditCommunityName))))
+                .addGroup(ViewEditLocationJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ViewEditLocationJPanelLayout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addComponent(btnSubmitCityCommunity, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(ViewEditLocationJPanelLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(ViewEditLocationJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(ViewEditLocationJPanelLayout.createSequentialGroup()
+                                .addComponent(txtViewEditHospitalName)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtViewEditHouseName))
+                            .addGroup(ViewEditLocationJPanelLayout.createSequentialGroup()
+                                .addComponent(lblViewEditHospital, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(lblViewEditHouse, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(14, 14, 14)
+                .addGroup(ViewEditLocationJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnUpdateHouseHosp, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBackViewEditLoc, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(7, 7, 7))
         );
 
         getContentPane().add(ViewEditLocationJPanel, "card7");
+
+        lblEncouter.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        lblEncouter.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblEncouter.setText("Encounter");
+        lblEncouter.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabel4.setText("jLabel4");
+
+        javax.swing.GroupLayout AddNewEncounterPanelLayout = new javax.swing.GroupLayout(AddNewEncounterPanel);
+        AddNewEncounterPanel.setLayout(AddNewEncounterPanelLayout);
+        AddNewEncounterPanelLayout.setHorizontalGroup(
+            AddNewEncounterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AddNewEncounterPanelLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addGroup(AddNewEncounterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
+                    .addComponent(lblEncouter, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(1014, Short.MAX_VALUE))
+        );
+        AddNewEncounterPanelLayout.setVerticalGroup(
+            AddNewEncounterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AddNewEncounterPanelLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(lblEncouter, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(60, 60, 60)
+                .addComponent(jLabel4)
+                .addContainerGap(571, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(AddNewEncounterPanel, "card8");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -2087,6 +2448,14 @@ public class LoginJFrame extends javax.swing.JFrame {
         ViewEditLocationJPanel.setVisible(true);
         ViewEditUserJPanel.setVisible(false);
         ViewEditUserJPanel.repaint();
+        
+        for(City city : system.getCityList())
+            cbCityHouseHospUpdate.addItem(city.getCityName());
+        
+        for(Community community : system.getCommunityList())
+            cbCommHouseHospUpdate.addItem(community.getCommunityName());
+       
+        pupolateLocationTables();
     }//GEN-LAST:event_btnViewEditLocationActionPerformed
 
     private void cbCityUserUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbCityUserUpdateActionPerformed
@@ -2119,6 +2488,7 @@ public class LoginJFrame extends javax.swing.JFrame {
             
             system.AddNewHospital(hospitalName, comm, city);
             JOptionPane.showMessageDialog(this, "BOOM. City has been saved.");
+            txtNewHospital.setText("");
         }    
     }//GEN-LAST:event_btnSaveNewHospitalActionPerformed
 
@@ -2130,6 +2500,7 @@ public class LoginJFrame extends javax.swing.JFrame {
             City city = system.AddNewCity();
             city.setCityName(txtNewCity.getText());
             JOptionPane.showMessageDialog(this, "BOOM. City has been saved.");
+            txtNewCity.setText("");
         }
     }//GEN-LAST:event_btnSaveNewCityActionPerformed
 
@@ -2141,6 +2512,7 @@ public class LoginJFrame extends javax.swing.JFrame {
             Community community = system.AddNewCommunity();
             community.setCommunityName(txtNewCommunity.getText());
             JOptionPane.showMessageDialog(this, "BOOM. Coommunity has been saved.");
+            txtNewCommunity.setText("");
         }
     }//GEN-LAST:event_btnSaveNewCommunityActionPerformed
 
@@ -2159,6 +2531,7 @@ public class LoginJFrame extends javax.swing.JFrame {
             
             system.AddNewHouse(house, comm, city);
             JOptionPane.showMessageDialog(this, "BOOM. House has been saved.");
+            txtNewHouse.setText("");
         }
     }//GEN-LAST:event_btnSaveNewHouseActionPerformed
 
@@ -2169,6 +2542,311 @@ public class LoginJFrame extends javax.swing.JFrame {
     private void cbNewHospCityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbNewHospCityActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cbNewHospCityActionPerformed
+
+    private void btnEditHospitalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditHospitalActionPerformed
+        // TODO add your handling code here:
+        int hospitalRow = tblHospital.getSelectedRow();
+        
+        btnSubmitCityCommunity.setVisible(false);
+        btnUpdateHouseHosp.setVisible(true);
+        
+        cbCityHouseHospUpdate.setEnabled(true);
+        cbCommHouseHospUpdate.setEnabled(true);
+        txtViewEditHospitalName.setEnabled(true);
+        txtViewEditHouseName.setEnabled(false);
+        
+        if(hospitalRow < 0) {
+            JOptionPane.showMessageDialog(this,"Please Select a row!");
+            return;
+        }
+            
+        DefaultTableModel model  = (DefaultTableModel) tblHospital.getModel();
+        Hospital hosp = (Hospital) model.getValueAt(hospitalRow, 0);
+            
+        cbCityHouseHospUpdate.setSelectedItem(hosp.getCity().getCityName());
+        cbCommHouseHospUpdate.setSelectedItem(hosp.getCommunity().getCommunityName());
+        txtViewEditHospitalName.setText(hosp.getHospName());
+        txtViewEditHouseName.setText("");
+    }//GEN-LAST:event_btnEditHospitalActionPerformed
+
+    private void btnBackViewEditLocActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackViewEditLocActionPerformed
+        // TODO add your handling code here:
+        NewUserJPanel.setVisible(false);
+        LoginJPanel.setVisible(false);
+        WelcomeJPanel.setVisible(true);
+        NewLocationJPanel.setVisible(false);
+        ViewEditLocationJPanel.setVisible(false);
+        ViewEditUserJPanel.setVisible(false);
+        ViewEditUserJPanel.repaint();
+    }//GEN-LAST:event_btnBackViewEditLocActionPerformed
+
+    private void btnEditCityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditCityActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = tblCity.getSelectedRow();
+
+        if(selectedRow<0){
+            JOptionPane.showMessageDialog(this,"Please Select a row!");
+            return;
+        }
+        
+        btnSubmitCityCommunity.setVisible(true);
+        txtViewEditCommunityName.setEnabled(false);
+        txtViewEditCityName.setEnabled(true);
+
+        DefaultTableModel model  = (DefaultTableModel) tblCity.getModel();
+        City  city = (City) model.getValueAt(selectedRow, 0);
+
+        txtViewEditCityName.setText(city.getCityName());
+
+//        for(City item : system.getCityList()){
+//            if(item.getCityName().equals(input)){
+//                JOptionPane.showMessageDialog(this, "City already added.");
+//                return;
+//            }
+//        }
+//        
+//        city.setCityName(input);
+//        JOptionPane.showMessageDialog(this, "City updated");
+    }//GEN-LAST:event_btnEditCityActionPerformed
+
+    private void btnEditCommunityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditCommunityActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = tblCommmunity.getSelectedRow();
+
+        if(selectedRow<0){
+            JOptionPane.showMessageDialog(this,"Please Select a row!");
+            return;
+        }
+        
+        btnSubmitCityCommunity.setVisible(true);
+        txtViewEditCommunityName.setEnabled(true);
+        txtViewEditCityName.setEnabled(false);
+
+        DefaultTableModel model  = (DefaultTableModel) tblCommmunity.getModel();
+        Community  com = (Community) model.getValueAt(selectedRow, 0);
+
+        txtViewEditCommunityName.setText(com.getCommunityName());
+    }//GEN-LAST:event_btnEditCommunityActionPerformed
+
+    private void btnSubmitCityCommunityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitCityCommunityActionPerformed
+        // TODO add your handling code here:
+
+        int cityRow = tblCity.getSelectedRow();
+        int comRow = tblCommmunity.getSelectedRow();
+
+        if(cityRow < 0 && comRow < 0) {
+            JOptionPane.showMessageDialog(this,"Please Select a row!");
+            return;
+        }
+        else if(cityRow > 0){
+            btnSubmitCityCommunity.setVisible(true);
+            btnUpdateHouseHosp.setVisible(false);
+            txtViewEditCommunityName.setEnabled(false);
+            txtViewEditCityName.setEnabled(true);
+        
+            DefaultTableModel model  = (DefaultTableModel) tblCity.getModel();
+            City city = (City) model.getValueAt(cityRow, 0);
+
+            String input = txtViewEditCityName.getText();
+        
+            if(input.equals("")){
+                    JOptionPane.showMessageDialog(this, "City cannot be blank!");
+                    return;
+            }
+                
+            for(City item : system.getCityList()){
+                if(item.getCityName().equals(input)){
+                    JOptionPane.showMessageDialog(this, "City already added!");
+                    return;
+                }
+            }
+        
+            city.setCityName(input);
+            JOptionPane.showMessageDialog(this, "City updated.");
+        }
+        else if(comRow >0){
+            btnSubmitCityCommunity.setVisible(true);
+            btnUpdateHouseHosp.setVisible(false);
+            txtViewEditCommunityName.setEnabled(true);
+            txtViewEditCityName.setEnabled(false);
+
+            DefaultTableModel model  = (DefaultTableModel) tblCommmunity.getModel();
+            Community  com = (Community) model.getValueAt(comRow, 0);
+
+            String input = txtViewEditCommunityName.getText();
+        
+            if(input.equals("")){
+                JOptionPane.showMessageDialog(this, "Community cannot be blank!");
+                return;
+            }
+            
+            for(Community item : system.getCommunityList()){
+                if(item.getCommunityName().equals(input)){
+                    JOptionPane.showMessageDialog(this, "Community already added.");
+                    return;
+                }
+            }
+        
+            com.setCommunityName(input);
+            JOptionPane.showMessageDialog(this, "Community updated");
+        }
+        
+        pupolateLocationTables();
+        txtViewEditCommunityName.setText("");
+        txtViewEditCityName.setText("");
+    }//GEN-LAST:event_btnSubmitCityCommunityActionPerformed
+
+    private void btnViewHospitalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewHospitalActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = tblHospital.getSelectedRow();
+        
+        if(selectedRow < 0){
+            JOptionPane.showMessageDialog(this,"Please Select a row!");
+            return;
+        }
+        
+        btnSubmitCityCommunity.setVisible(false);
+        btnUpdateHouseHosp.setVisible(false);
+        
+        cbCityHouseHospUpdate.setEnabled(false);
+        cbCommHouseHospUpdate.setEnabled(false);
+        txtViewEditHospitalName.setEnabled(false);
+        txtViewEditHouseName.setEnabled(false);
+        
+        DefaultTableModel model  = (DefaultTableModel) tblHospital.getModel();
+        Hospital hosp = (Hospital) model.getValueAt(selectedRow, 0);
+
+        cbCityHouseHospUpdate.setSelectedItem(hosp.getCity().getCityName());
+        cbCommHouseHospUpdate.setSelectedItem(hosp.getCommunity().getCommunityName());
+        txtViewEditHospitalName.setText(hosp.getHospName());
+        txtViewEditHouseName.setText("");
+    }//GEN-LAST:event_btnViewHospitalActionPerformed
+
+    private void btnUpdateHouseHospActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateHouseHospActionPerformed
+        // TODO add your handling code here:
+        
+        int houseRow = tblHouse.getSelectedRow();
+        int hospitalRow = tblHospital.getSelectedRow();
+        
+        btnSubmitCityCommunity.setVisible(false);
+        btnUpdateHouseHosp.setVisible(true);
+        
+        cbCityHouseHospUpdate.setEnabled(true);
+        cbCommHouseHospUpdate.setEnabled(true);
+        
+        if(houseRow < 0 && hospitalRow < 0) {
+            JOptionPane.showMessageDialog(this,"Please Select a row!");
+            return;
+        }
+        else if(txtViewEditHospitalName.getText().equals("")){
+            txtViewEditHouseName.setEnabled(true);
+            txtViewEditHospitalName.setEnabled(false);
+            
+            DefaultTableModel model  = (DefaultTableModel) tblHouse.getModel();
+            House house = (House) model.getValueAt(houseRow, 0);
+            
+//            cbCityHouseHospUpdate.setSelectedItem(house.getCity());
+//            cbCommHouseHospUpdate.setSelectedItem(house.getCommunity());
+//            txtViewEditHouseName.setText(house.getHouseName());
+            
+            for(House item : system.getHouseList()){
+                if(item.getCity().equals(cbCityHouseHospUpdate.getSelectedItem().toString()) && item.getCommunity().equals(cbCommHouseHospUpdate.getSelectedItem().toString()) && item.getHouseName().equals(txtViewEditHouseName.getText())){
+                    JOptionPane.showMessageDialog(this, "House already added.");
+                    return;
+                }
+            }
+            
+            house.setCity(cbCityHouseHospUpdate.getSelectedItem().toString());
+            house.setCommunity(cbCommHouseHospUpdate.getSelectedItem().toString());
+            house.setHouseName(txtViewEditHouseName.getText());
+            
+            JOptionPane.showMessageDialog(this, "House updated");
+            txtViewEditHouseName.setText("");
+        }
+        else if(txtViewEditHouseName.getText().equals("")){
+            txtViewEditHouseName.setEnabled(false);
+            txtViewEditHospitalName.setEnabled(true);
+            
+            DefaultTableModel model  = (DefaultTableModel) tblHospital.getModel();
+            Hospital hosp = (Hospital) model.getValueAt(hospitalRow, 0);
+            
+//            cbCityHouseHospUpdate.setSelectedItem(hosp.getCity());
+//            cbCommHouseHospUpdate.setSelectedItem(hosp.getCommunity());
+//            txtViewEditHospitalName.setText(hosp.getHospName());
+            
+            for(House item : system.getHouseList()){
+                if(item.getCity().equals(cbCityHouseHospUpdate.getSelectedItem().toString()) && item.getCommunity().equals(cbCommHouseHospUpdate.getSelectedItem().toString()) && item.getHouseName().equals(txtViewEditHospitalName.getText())){
+                    JOptionPane.showMessageDialog(this, "Hospital already added.");
+                    return;
+                }
+            }
+            
+            hosp.setCity(cbCityHouseHospUpdate.getSelectedItem().toString());
+            hosp.setCommunity(cbCommHouseHospUpdate.getSelectedItem().toString());
+            hosp.setHospName(txtViewEditHospitalName.getText());
+            
+            JOptionPane.showMessageDialog(this, "Hospital updated");
+            txtViewEditHospitalName.setText("");
+        }
+        pupolateLocationTables();
+    }//GEN-LAST:event_btnUpdateHouseHospActionPerformed
+
+    private void btnEditHouseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditHouseActionPerformed
+        // TODO add your handling code here:
+        int houseRow = tblHouse.getSelectedRow();
+        
+        btnSubmitCityCommunity.setVisible(false);
+        btnUpdateHouseHosp.setVisible(true);
+        
+        cbCityHouseHospUpdate.setEnabled(true);
+        cbCommHouseHospUpdate.setEnabled(true);
+        txtViewEditHospitalName.setEnabled(false);
+        txtViewEditHouseName.setEnabled(true);
+        
+        if(houseRow < 0) {
+            JOptionPane.showMessageDialog(this,"Please Select a row!");
+            return;
+        }
+            
+        DefaultTableModel model  = (DefaultTableModel) tblHouse.getModel();
+        House house = (House) model.getValueAt(houseRow, 0);
+            
+        cbCityHouseHospUpdate.setSelectedItem(house.getCity());
+        cbCommHouseHospUpdate.setSelectedItem(house.getCommunity());
+        txtViewEditHospitalName.setText("");
+        txtViewEditHouseName.setText(house.getHouseName());
+    }//GEN-LAST:event_btnEditHouseActionPerformed
+
+    private void btnViewHouseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewHouseActionPerformed
+        // TODO add your handling code here:
+        
+        int houseRow = tblHouse.getSelectedRow();
+        
+        btnSubmitCityCommunity.setVisible(false);
+        btnUpdateHouseHosp.setVisible(true);
+        
+        cbCityHouseHospUpdate.setEnabled(false);
+        cbCommHouseHospUpdate.setEnabled(false);
+        txtViewEditHospitalName.setEnabled(false);
+        txtViewEditHouseName.setEnabled(false);
+        
+        if(houseRow < 0) {
+            JOptionPane.showMessageDialog(this,"Please Select a row!");
+            return;
+        }
+            
+        DefaultTableModel model  = (DefaultTableModel) tblHouse.getModel();
+        House house = (House) model.getValueAt(houseRow, 0);
+            
+        cbCityHouseHospUpdate.setSelectedItem(house.getCity());
+        cbCommHouseHospUpdate.setSelectedItem(house.getCommunity());
+        txtViewEditHospitalName.setText("");
+        txtViewEditHouseName.setText(house.getHouseName());
+    }//GEN-LAST:event_btnViewHouseActionPerformed
+
+    private void btnAddNewEncounterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddNewEncounterActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAddNewEncounterActionPerformed
 
      /**
      * @param args the command line arguments
@@ -2226,7 +2904,64 @@ public class LoginJFrame extends javax.swing.JFrame {
         }
     }
     
+    private void pupolateLocationTables(){
+        btnUpdateHouseHosp.setVisible(false);
+        btnSubmitCityCommunity.setVisible(false);
+        
+        
+        DefaultTableModel model = (DefaultTableModel) tblCity.getModel(); 
+        model.setRowCount(0); 
+        
+        for (City city : system.getCityList()){
+            
+            Object[] row = new Object[1];
+            
+            row[0] = city;
+            model.addRow(row);
+        }
+        
+        model = (DefaultTableModel) tblCommmunity.getModel(); 
+        model.setRowCount(0); 
+        
+        for (Community com : system.getCommunityList()){
+            
+            Object[] row = new Object[1];
+            
+            row[0] = com;
+            model.addRow(row);
+        }
+        
+        model = (DefaultTableModel) tblHospital.getModel(); 
+        model.setRowCount(0); 
+        
+        for (Hospital hosp : system.getHospitalList().getHospitalList()){
+            
+            Object[] row = new Object[3];
+            
+            row[0] = hosp;
+            row[1] = hosp.getCommunity();
+            row[2] = hosp.getCity();
+            
+            model.addRow(row);
+        }
+        
+        model = (DefaultTableModel) tblHouse.getModel(); 
+        model.setRowCount(0); 
+        
+        for (House house : system.getHouseList()){
+            
+            Object[] row = new Object[3];
+            
+            row[0] = house;
+            row[1] = house.getCommunity();
+            row[2] = house.getCity();
+            
+            model.addRow(row);
+        }
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel AddNewEncounterPanel;
     private javax.swing.JPanel LoginJPanel;
     private javax.swing.JPanel NewDoctorSubPanel;
     private javax.swing.JPanel NewLocationJPanel;
@@ -2235,10 +2970,16 @@ public class LoginJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel ViewEditLocationJPanel;
     private javax.swing.JPanel ViewEditUserJPanel;
     private javax.swing.JPanel WelcomeJPanel;
+    private javax.swing.JButton btnAddNewEncounter;
     private javax.swing.JButton btnAddNewLocation;
     private javax.swing.JButton btnAddPatient;
     private javax.swing.JButton btnBack;
+    private javax.swing.JButton btnBackViewEditLoc;
     private javax.swing.JButton btnDeletePerson;
+    private javax.swing.JButton btnEditCity;
+    private javax.swing.JButton btnEditCommunity;
+    private javax.swing.JButton btnEditHospital;
+    private javax.swing.JButton btnEditHouse;
     private javax.swing.JButton btnEditPatient;
     private javax.swing.JButton btnEditPerson;
     private javax.swing.JButton btnLogin;
@@ -2248,11 +2989,18 @@ public class LoginJFrame extends javax.swing.JFrame {
     private javax.swing.JButton btnSaveNewCommunity;
     private javax.swing.JButton btnSaveNewHospital;
     private javax.swing.JButton btnSaveNewHouse;
+    private javax.swing.JButton btnSubmitCityCommunity;
+    private javax.swing.JButton btnUpdateHouseHosp;
     private javax.swing.JButton btnUpdatePrsnDet;
     private javax.swing.JButton btnViewEditBack;
+    private javax.swing.JButton btnViewEditEncounter;
     private javax.swing.JButton btnViewEditLocation;
+    private javax.swing.JButton btnViewHospital;
+    private javax.swing.JButton btnViewHouse;
     private javax.swing.JButton btnViewPerson;
+    private javax.swing.JComboBox<String> cbCityHouseHospUpdate;
     private javax.swing.JComboBox<String> cbCityUserUpdate;
+    private javax.swing.JComboBox<String> cbCommHouseHospUpdate;
     private javax.swing.JComboBox<String> cbCommunityUserUpdate;
     private javax.swing.JComboBox<String> cbDocUpdateHospital;
     private javax.swing.JComboBox<String> cbGender;
@@ -2270,11 +3018,17 @@ public class LoginJFrame extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbRoleUpdate;
     private javax.swing.JComboBox<String> cbUpdateDoctorCity;
     private javax.swing.JComboBox<String> cbUpdateSpecialization;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPaneCity;
+    private javax.swing.JScrollPane jScrollPaneCommunity;
+    private javax.swing.JScrollPane jScrollPaneHospital;
+    private javax.swing.JScrollPane jScrollPaneHouse;
     private javax.swing.JLabel lblAddNewCity;
     private javax.swing.JLabel lblAddNewCommunity;
     private javax.swing.JLabel lblAddNewHospital;
@@ -2288,6 +3042,7 @@ public class LoginJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel lblDocUpdateHospital;
     private javax.swing.JLabel lblDoctorDetails;
     private javax.swing.JLabel lblEmailId;
+    private javax.swing.JLabel lblEncouter;
     private javax.swing.JLabel lblFirstName;
     private javax.swing.JLabel lblGender;
     private javax.swing.JLabel lblHouse;
@@ -2329,10 +3084,21 @@ public class LoginJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel lblUpdateSpecialization;
     private javax.swing.JLabel lblUserName;
     private javax.swing.JLabel lblUserNameUpdate;
+    private javax.swing.JLabel lblViewEditCity;
+    private javax.swing.JLabel lblViewEditCityName;
+    private javax.swing.JLabel lblViewEditCommunity;
+    private javax.swing.JLabel lblViewEditCommunityName;
+    private javax.swing.JLabel lblViewEditHospital;
+    private javax.swing.JLabel lblViewEditHouse;
+    private javax.swing.JLabel lblViewEditLocation;
     private javax.swing.JLabel lblWelcome;
     private javax.swing.JLabel lblZipCode;
     private javax.swing.JLabel lblZipCodeUpdate;
     private javax.swing.JPasswordField pwdLoginPassword;
+    private javax.swing.JTable tblCity;
+    private javax.swing.JTable tblCommmunity;
+    private javax.swing.JTable tblHospital;
+    private javax.swing.JTable tblHouse;
     private javax.swing.JTable tblViewPersonData;
     private javax.swing.JTextField txtAge;
     private javax.swing.JTextField txtAgeUpdate;
@@ -2355,6 +3121,10 @@ public class LoginJFrame extends javax.swing.JFrame {
     private javax.swing.JTextField txtPhoneNoUpdate;
     private javax.swing.JTextField txtUserName;
     private javax.swing.JTextField txtUserNameUpdate;
+    private javax.swing.JTextField txtViewEditCityName;
+    private javax.swing.JTextField txtViewEditCommunityName;
+    private javax.swing.JTextField txtViewEditHospitalName;
+    private javax.swing.JTextField txtViewEditHouseName;
     private javax.swing.JTextField txtZipCode;
     private javax.swing.JTextField txtZipCodeUpdate;
     // End of variables declaration//GEN-END:variables

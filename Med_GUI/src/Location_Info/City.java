@@ -18,4 +18,10 @@ public class City {
     public void setCityName(String CityName) {
         this.cityName = CityName;
     }
+    
+    @Override
+    public String toString(){
+        return this.cityName;
+    }
+    
 }

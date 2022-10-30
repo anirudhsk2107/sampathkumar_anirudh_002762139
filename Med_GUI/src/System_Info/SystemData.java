@@ -62,15 +62,26 @@ public class SystemData {
         communityList.add(community);
         
         House house = new House();
+        house.setCity("Mumbai");
+        house.setCommunity("Longwood");
         house.setHouseName("House 1");
         houseList.add(house);
+
         house = new House();
+        house.setCity("Chennai");
+        house.setCommunity("Forest Hills");
         house.setHouseName("House 2");
         houseList.add(house);
+        
         house = new House();
+                house.setCity("Kolkata");
+        house.setCommunity("Boylston");
         house.setHouseName("House 3");
         houseList.add(house);
+        
         house = new House();
+        house.setCity("Bengaluru");
+        house.setCommunity("Roxbury");
         house.setHouseName("House 4");
         houseList.add(house);
     }
@@ -175,8 +186,8 @@ public class SystemData {
     public void AddNewHouse(String houseName, Community community, City city){
         House house = new House();
         house.setHouseName(houseName);
-        house.setCity(city);
-        house.setCommunity(community);
+        house.setCity(city.getCityName());
+        house.setCommunity(community.getCommunityName());
         houseList.add(house);
     }
     
@@ -194,5 +205,13 @@ public class SystemData {
     
     public void DeletePatientById(int id){
         patientList.DeletePatientById(id);
+    }
+
+    public ArrayList<House> getHouseList() {
+        return houseList;
+    }
+
+    public void setHouseList(ArrayList<House> houseList) {
+        this.houseList = houseList;
     }
 }

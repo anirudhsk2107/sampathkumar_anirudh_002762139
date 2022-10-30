@@ -20,4 +20,8 @@ public class Community {
         this.communityName = communityName;
     }
 
+    @Override
+    public String toString(){
+        return this.communityName;
+    }
 }

@@ -4,6 +4,7 @@
  */
 package System_Info;
 
+import Appointment_Info.Encounter;
 import Appointment_Info.EncounterHistory;
 import Location_Info.City;
 import Location_Info.Community;
@@ -189,6 +190,12 @@ public class SystemData {
         house.setCity(city.getCityName());
         house.setCommunity(community.getCommunityName());
         houseList.add(house);
+    }
+    
+    public Encounter AddNewEncounter(){
+        Encounter encounter = new Encounter();
+        encounterList.addNewEncounter(encounter);
+        return encounter;
     }
     
     public Doctor GetDoctorById(int id){

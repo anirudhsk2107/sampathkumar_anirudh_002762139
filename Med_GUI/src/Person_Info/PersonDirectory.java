@@ -22,7 +22,7 @@ public class PersonDirectory {
         person.setUserName("sysadmin");
         person.setPassword("sysadmin");
         person.setId(1);
-        person.setRole("SysAdmin");
+        person.setRole("sysadmin");
         person.setEmail("sysadmin@gmail.com");
         person.setGender("Male");
         personList.add(person);
@@ -32,7 +32,7 @@ public class PersonDirectory {
         person.setUserName("hospadmin");
         person.setPassword("hospadmin");
         person.setId(2);
-        person.setRole("HospAdmin");
+        person.setRole("hospadmin");
         person.setEmail("hospadmin@gmail.com");
         person.setGender("Female");
         personList.add(person);
@@ -41,7 +41,7 @@ public class PersonDirectory {
         person.setUserName("commadmin");
         person.setPassword("commadmin");
         person.setId(3);
-        person.setRole("CommAdmin");
+        person.setRole("commadmin");
         person.setEmail("commadmin@gmail.com");
         person.setGender("Male");
         personList.add(person);

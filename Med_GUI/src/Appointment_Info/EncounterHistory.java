@@ -24,4 +24,9 @@ public class EncounterHistory {
     public void setEncounterHist(ArrayList<Encounter> encounterHist) {
         this.encounterHist = encounterHist;
     }
+    
+    public Encounter addNewEncounter(Encounter enc){
+        encounterHist.add(enc);
+        return enc;
+    }
 }

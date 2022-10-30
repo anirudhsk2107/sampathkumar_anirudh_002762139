@@ -4,6 +4,7 @@
  */
 package UI_Info;
 
+import Appointment_Info.Encounter;
 import Location_Info.City;
 import Location_Info.Community;
 import Location_Info.Hospital;
@@ -15,6 +16,7 @@ import System_Info.SystemData;
 import Person_Info.Person;
 import java.awt.event.ItemEvent;
 import java.util.ArrayList;
+import java.util.Date;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -103,6 +105,7 @@ public class LoginJFrame extends javax.swing.JFrame {
         jButton6 = new javax.swing.JButton();
         btnViewEditEncounter = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
+        btnLogOut = new javax.swing.JButton();
         ViewEditUserJPanel = new javax.swing.JPanel();
         lblTitle = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -208,11 +211,19 @@ public class LoginJFrame extends javax.swing.JFrame {
         AddNewEncounterPanel = new javax.swing.JPanel();
         lblEncouter = new javax.swing.JLabel();
         lblDocNameEncounter = new javax.swing.JLabel();
-        txtPatNameEncounter = new javax.swing.JLabel();
         lblCityEncounter = new javax.swing.JLabel();
         lblAppointment = new javax.swing.JLabel();
         txtPatNameEncounter1 = new javax.swing.JLabel();
         lblDocNameEncounter1 = new javax.swing.JLabel();
+        cbNewEncounterCity = new javax.swing.JComboBox<>();
+        cbNewHospitalEncounter = new javax.swing.JComboBox<>();
+        cbNewEncounterCommunity = new javax.swing.JComboBox<>();
+        cbNewDoctorEncounter = new javax.swing.JComboBox<>();
+        dtNewAppointment = new com.toedter.calendar.JDateChooser();
+        btnSubmitNewEncounter = new javax.swing.JButton();
+        lblPatientNameEncounter = new javax.swing.JLabel();
+        txtNewEncounterPatient = new javax.swing.JTextField();
+        btnBackNewEncounter = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.CardLayout());
@@ -813,31 +824,40 @@ public class LoginJFrame extends javax.swing.JFrame {
         jButton8.setPreferredSize(new java.awt.Dimension(100, 30));
         jButton8.setSize(new java.awt.Dimension(100, 30));
 
+        btnLogOut.setText("Log Out");
+        btnLogOut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLogOutActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout WelcomeJPanelLayout = new javax.swing.GroupLayout(WelcomeJPanel);
         WelcomeJPanel.setLayout(WelcomeJPanelLayout);
         WelcomeJPanelLayout.setHorizontalGroup(
             WelcomeJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, WelcomeJPanelLayout.createSequentialGroup()
+            .addGroup(WelcomeJPanelLayout.createSequentialGroup()
                 .addContainerGap(100, Short.MAX_VALUE)
                 .addGroup(WelcomeJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblWelcome, javax.swing.GroupLayout.PREFERRED_SIZE, 1100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(WelcomeJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(WelcomeJPanelLayout.createSequentialGroup()
-                            .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, WelcomeJPanelLayout.createSequentialGroup()
-                            .addComponent(btnAddNewEncounter, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnViewEditEncounter, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(WelcomeJPanelLayout.createSequentialGroup()
-                            .addComponent(btnAddNewLocation, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnViewEditLocation, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(WelcomeJPanelLayout.createSequentialGroup()
-                            .addComponent(btnAddPatient, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(40, 40, 40)
-                            .addComponent(btnEditPatient, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, WelcomeJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(lblWelcome, javax.swing.GroupLayout.PREFERRED_SIZE, 1100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(WelcomeJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(WelcomeJPanelLayout.createSequentialGroup()
+                                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, WelcomeJPanelLayout.createSequentialGroup()
+                                .addComponent(btnAddNewEncounter, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnViewEditEncounter, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(WelcomeJPanelLayout.createSequentialGroup()
+                                .addComponent(btnAddNewLocation, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnViewEditLocation, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(WelcomeJPanelLayout.createSequentialGroup()
+                                .addComponent(btnAddPatient, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(40, 40, 40)
+                                .addComponent(btnEditPatient, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(btnLogOut, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(100, 100, 100))
         );
         WelcomeJPanelLayout.setVerticalGroup(
@@ -861,7 +881,9 @@ public class LoginJFrame extends javax.swing.JFrame {
                 .addGroup(WelcomeJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(207, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 140, Short.MAX_VALUE)
+                .addComponent(btnLogOut)
+                .addGap(44, 44, 44))
         );
 
         getContentPane().add(WelcomeJPanel, "card4");
@@ -1807,8 +1829,6 @@ public class LoginJFrame extends javax.swing.JFrame {
 
         lblDocNameEncounter.setText("Doctor Name");
 
-        txtPatNameEncounter.setText("Patient Name");
-
         lblCityEncounter.setText("City Name");
 
         lblAppointment.setText("Appointment");
@@ -1817,40 +1837,120 @@ public class LoginJFrame extends javax.swing.JFrame {
 
         lblDocNameEncounter1.setText("Community Name");
 
+        cbNewEncounterCity.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cbNewEncounterCityItemStateChanged(evt);
+            }
+        });
+
+        cbNewHospitalEncounter.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cbNewHospitalEncounterItemStateChanged(evt);
+            }
+        });
+
+        cbNewEncounterCommunity.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cbNewEncounterCommunityItemStateChanged(evt);
+            }
+        });
+        cbNewEncounterCommunity.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbNewEncounterCommunityActionPerformed(evt);
+            }
+        });
+
+        cbNewDoctorEncounter.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cbNewDoctorEncounterItemStateChanged(evt);
+            }
+        });
+        cbNewDoctorEncounter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbNewDoctorEncounterActionPerformed(evt);
+            }
+        });
+
+        btnSubmitNewEncounter.setText("Submit");
+        btnSubmitNewEncounter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSubmitNewEncounterActionPerformed(evt);
+            }
+        });
+
+        lblPatientNameEncounter.setText("Patient Name");
+
+        btnBackNewEncounter.setText("Back");
+        btnBackNewEncounter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackNewEncounterActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout AddNewEncounterPanelLayout = new javax.swing.GroupLayout(AddNewEncounterPanel);
         AddNewEncounterPanel.setLayout(AddNewEncounterPanelLayout);
         AddNewEncounterPanelLayout.setHorizontalGroup(
             AddNewEncounterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(AddNewEncounterPanelLayout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addGroup(AddNewEncounterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblAppointment, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtPatNameEncounter1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblDocNameEncounter1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblCityEncounter, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtPatNameEncounter, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblDocNameEncounter, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblEncouter, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(1014, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AddNewEncounterPanelLayout.createSequentialGroup()
+                .addContainerGap(346, Short.MAX_VALUE)
+                .addGroup(AddNewEncounterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(AddNewEncounterPanelLayout.createSequentialGroup()
+                        .addComponent(btnBackNewEncounter, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 125, Short.MAX_VALUE)
+                        .addComponent(btnSubmitNewEncounter, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblEncouter, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, AddNewEncounterPanelLayout.createSequentialGroup()
+                        .addGroup(AddNewEncounterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblDocNameEncounter1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblCityEncounter, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtPatNameEncounter1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblDocNameEncounter, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblAppointment, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblPatientNameEncounter, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(AddNewEncounterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(cbNewEncounterCity, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cbNewHospitalEncounter, javax.swing.GroupLayout.Alignment.TRAILING, 0, 359, Short.MAX_VALUE)
+                            .addComponent(cbNewEncounterCommunity, javax.swing.GroupLayout.Alignment.TRAILING, 0, 359, Short.MAX_VALUE)
+                            .addComponent(cbNewDoctorEncounter, javax.swing.GroupLayout.Alignment.TRAILING, 0, 359, Short.MAX_VALUE)
+                            .addComponent(dtNewAppointment, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtNewEncounterPatient))))
+                .addGap(467, 467, 467))
         );
         AddNewEncounterPanelLayout.setVerticalGroup(
             AddNewEncounterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(AddNewEncounterPanelLayout.createSequentialGroup()
-                .addGap(16, 16, 16)
+                .addGap(99, 99, 99)
                 .addComponent(lblEncouter, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(64, 64, 64)
-                .addComponent(txtPatNameEncounter, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblCityEncounter, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblDocNameEncounter1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtPatNameEncounter1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblDocNameEncounter, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblAppointment, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(392, Short.MAX_VALUE))
+                .addGap(77, 77, 77)
+                .addGroup(AddNewEncounterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCityEncounter, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbNewEncounterCity, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(AddNewEncounterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblDocNameEncounter1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbNewEncounterCommunity, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
+                .addGroup(AddNewEncounterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtPatNameEncounter1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbNewHospitalEncounter, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(AddNewEncounterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblDocNameEncounter, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbNewDoctorEncounter, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(AddNewEncounterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(dtNewAppointment, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblAppointment, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(AddNewEncounterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblPatientNameEncounter, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNewEncounterPatient, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(53, 53, 53)
+                .addGroup(AddNewEncounterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSubmitNewEncounter, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBackNewEncounter, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(141, Short.MAX_VALUE))
         );
 
         getContentPane().add(AddNewEncounterPanel, "card8");
@@ -1886,7 +1986,7 @@ public class LoginJFrame extends javax.swing.JFrame {
                     flag = true;
                     globalRole = person.getRole();
                     
-                    if(!globalRole.equals("sysadmin") || !globalRole.equals("hospadmin")){
+                    if(!globalRole.equals("sysadmin")){ //|| !globalRole.equals("hospadmin")){
                         btnAddPatient.setVisible(false);
                         btnEditPatient.setVisible(false);
                         btnAddNewEncounter.setVisible(false);
@@ -1910,6 +2010,7 @@ public class LoginJFrame extends javax.swing.JFrame {
         NewLocationJPanel.setVisible(false);
         ViewEditLocationJPanel.setVisible(false);
         ViewEditUserJPanel.setVisible(true);
+        AddNewEncounterPanel.setVisible(false);
         getUserTableData();
         
         
@@ -1937,6 +2038,7 @@ public class LoginJFrame extends javax.swing.JFrame {
         NewLocationJPanel.setVisible(false);
         ViewEditLocationJPanel.setVisible(false);
         ViewEditUserJPanel.setVisible(false);
+        AddNewEncounterPanel.setVisible(false);
         
         for(City city : system.getCityList()){
             cbNewUserCity.addItem(city.getCityName());
@@ -2259,7 +2361,7 @@ public class LoginJFrame extends javax.swing.JFrame {
             errorString.append("Password cannot be blank.\n");
             flag = false;
         }
-        if(txtUserName.getText().equals("")){
+        if(txtNewUserName.getText().equals("")){
             errorString.append("User Name cannot be blank.\n");
             flag = false;
         }
@@ -2356,7 +2458,7 @@ public class LoginJFrame extends javax.swing.JFrame {
         txtEmailId.setText("");
         txtPhoneNo.setText("");
         txtAge.setText("");
-        txtUserName.setText("");
+        txtNewUserName.setText("");
         txtNewPassword.setText("");
         txtZipCode.setText("");
     }//GEN-LAST:event_btnNewUserSubmitActionPerformed
@@ -2467,7 +2569,7 @@ public class LoginJFrame extends javax.swing.JFrame {
         NewLocationJPanel.setVisible(true);
         ViewEditLocationJPanel.setVisible(false);
         ViewEditUserJPanel.setVisible(false);
-        ViewEditUserJPanel.repaint();
+        AddNewEncounterPanel.setVisible(false);
         
         for(City city : system.getCityList()){
             cbNewHospCity.addItem(city.getCityName());
@@ -2488,8 +2590,7 @@ public class LoginJFrame extends javax.swing.JFrame {
         NewLocationJPanel.setVisible(false);
         ViewEditLocationJPanel.setVisible(true);
         ViewEditUserJPanel.setVisible(false);
-        ViewEditUserJPanel.repaint();
-        
+        AddNewEncounterPanel.setVisible(false);        
         for(City city : system.getCityList())
             cbCityHouseHospUpdate.addItem(city.getCityName());
         
@@ -2887,7 +2988,137 @@ public class LoginJFrame extends javax.swing.JFrame {
 
     private void btnAddNewEncounterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddNewEncounterActionPerformed
         // TODO add your handling code here:
+        NewUserJPanel.setVisible(false);
+        LoginJPanel.setVisible(false);
+        WelcomeJPanel.setVisible(false);
+        NewLocationJPanel.setVisible(false);
+        ViewEditLocationJPanel.setVisible(false);
+        ViewEditUserJPanel.setVisible(false);
+        AddNewEncounterPanel.setVisible(true);
+        
+        for(City city : system.getCityList()){
+            cbNewEncounterCity.addItem(city.getCityName());
+        }
+        
+        for(Community community : system.getCommunityList())
+            cbNewEncounterCommunity.addItem(community.getCommunityName());
     }//GEN-LAST:event_btnAddNewEncounterActionPerformed
+
+    private void cbNewEncounterCommunityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbNewEncounterCommunityActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbNewEncounterCommunityActionPerformed
+
+    private void cbNewDoctorEncounterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbNewDoctorEncounterActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbNewDoctorEncounterActionPerformed
+
+    private void btnSubmitNewEncounterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitNewEncounterActionPerformed
+        // TODO add your handling code here:
+        String patientnm = txtNewEncounterPatient.getText();
+        String doctornm = cbNewDoctorEncounter.getSelectedItem().toString();
+        String citynm = cbNewEncounterCity.getSelectedItem().toString();
+        String communitynm = cbNewEncounterCommunity.getSelectedItem().toString();
+        String hospitalnm = cbNewHospitalEncounter.getSelectedItem().toString();
+        Date appointment = dtNewAppointment.getDate();
+        
+        Patient pat = new Patient();
+        String fullName;
+        boolean flag = false;
+        
+        for(Patient patient : system.getPatientList().getPatientList()){
+            fullName = patient.getfName() + " " + patient.getlName();
+            
+            if(fullName.equals(patientnm)){
+                flag = true;
+                pat = patient;
+            }
+        }
+        
+        if(!flag)
+            JOptionPane.showMessageDialog(this, "This patient does not exists.");
+        else{
+            Encounter enc = system.AddNewEncounter();
+            
+            for(Doctor doc : system.getDoctorList()){
+                if(doc.getDoctorName().equals(doctornm)){
+                    enc.setDoctor(doc);
+                }                
+            }           
+            
+            enc.setPatient(pat);
+            enc.setAppointment(appointment);
+        }
+    }//GEN-LAST:event_btnSubmitNewEncounterActionPerformed
+
+    private void cbNewEncounterCommunityItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbNewEncounterCommunityItemStateChanged
+        // TODO add your handling code here:
+//
+        //cbNewHospitalEncounter.removeAllItems();
+//        cbNewHospitalEncounter.addItem("");
+
+        if(cbNewEncounterCommunity.getItemCount() != 0){
+            String city = cbNewEncounterCity.getSelectedItem().toString();
+            String community = cbNewEncounterCommunity.getSelectedItem().toString();
+            cbNewHospitalEncounter.removeAllItems();
+            //cbNewDoctorEncounter.removeAllItems();
+            
+            for(Hospital hospital : system.getHospitalList().getHospitalList()){
+                if(hospital.getCity().getCityName().equals(city) && hospital.getCommunity().getCommunityName().equals(community)){
+                   cbNewHospitalEncounter.addItem(hospital.getHospName());
+            }
+        }        
+        }
+    }//GEN-LAST:event_cbNewEncounterCommunityItemStateChanged
+
+    private void cbNewDoctorEncounterItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbNewDoctorEncounterItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbNewDoctorEncounterItemStateChanged
+
+    private void cbNewHospitalEncounterItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbNewHospitalEncounterItemStateChanged
+        // TODO add your handling code here:
+        String city = cbNewEncounterCity.getSelectedItem().toString();
+        String community = cbNewEncounterCommunity.getSelectedItem().toString();
+        
+        if(cbNewHospitalEncounter.getItemCount() != 0){
+            String hospital = cbNewHospitalEncounter.getSelectedItem().toString();
+        
+            cbNewDoctorEncounter.removeAllItems();
+            
+        for(Doctor doc : system.getDoctorList()){
+            if(doc.getCity().equals(city) && doc.getCommunity().equals(community) && doc.getHospital().getHospName().contains(hospital))
+                cbNewDoctorEncounter.addItem(doc.getDoctorName());
+            }
+        }
+    }//GEN-LAST:event_cbNewHospitalEncounterItemStateChanged
+
+    private void btnBackNewEncounterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackNewEncounterActionPerformed
+        // TODO add your handling code here:
+        NewUserJPanel.setVisible(false);
+        LoginJPanel.setVisible(false);
+        WelcomeJPanel.setVisible(true);
+        NewLocationJPanel.setVisible(false);
+        ViewEditLocationJPanel.setVisible(false);
+        ViewEditUserJPanel.setVisible(false);
+        AddNewEncounterPanel.setVisible(false);
+    }//GEN-LAST:event_btnBackNewEncounterActionPerformed
+
+    private void cbNewEncounterCityItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbNewEncounterCityItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbNewEncounterCityItemStateChanged
+
+    private void btnLogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogOutActionPerformed
+        // TODO add your handling code here:
+        txtUserName.setText("");
+        pwdLoginPassword.setText("");
+        
+        NewUserJPanel.setVisible(false);
+        LoginJPanel.setVisible(true);
+        WelcomeJPanel.setVisible(false);
+        NewLocationJPanel.setVisible(false);
+        ViewEditLocationJPanel.setVisible(false);
+        ViewEditUserJPanel.setVisible(false);
+        AddNewEncounterPanel.setVisible(false);
+    }//GEN-LAST:event_btnLogOutActionPerformed
 
      /**
      * @param args the command line arguments
@@ -3015,6 +3246,7 @@ public class LoginJFrame extends javax.swing.JFrame {
     private javax.swing.JButton btnAddNewLocation;
     private javax.swing.JButton btnAddPatient;
     private javax.swing.JButton btnBack;
+    private javax.swing.JButton btnBackNewEncounter;
     private javax.swing.JButton btnBackViewEditLoc;
     private javax.swing.JButton btnDeletePerson;
     private javax.swing.JButton btnEditCity;
@@ -3023,6 +3255,7 @@ public class LoginJFrame extends javax.swing.JFrame {
     private javax.swing.JButton btnEditHouse;
     private javax.swing.JButton btnEditPatient;
     private javax.swing.JButton btnEditPerson;
+    private javax.swing.JButton btnLogOut;
     private javax.swing.JButton btnLogin;
     private javax.swing.JButton btnNewLocationBack;
     private javax.swing.JButton btnNewUserSubmit;
@@ -3031,6 +3264,7 @@ public class LoginJFrame extends javax.swing.JFrame {
     private javax.swing.JButton btnSaveNewHospital;
     private javax.swing.JButton btnSaveNewHouse;
     private javax.swing.JButton btnSubmitCityCommunity;
+    private javax.swing.JButton btnSubmitNewEncounter;
     private javax.swing.JButton btnUpdateHouseHosp;
     private javax.swing.JButton btnUpdatePrsnDet;
     private javax.swing.JButton btnViewEditBack;
@@ -3047,8 +3281,12 @@ public class LoginJFrame extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbGender;
     private javax.swing.JComboBox<String> cbGenderUpdate;
     private javax.swing.JComboBox<String> cbNewDoctorCity;
+    private javax.swing.JComboBox<String> cbNewDoctorEncounter;
+    private javax.swing.JComboBox<String> cbNewEncounterCity;
+    private javax.swing.JComboBox<String> cbNewEncounterCommunity;
     private javax.swing.JComboBox<String> cbNewHospCity;
     private javax.swing.JComboBox<String> cbNewHospCommunity;
+    private javax.swing.JComboBox<String> cbNewHospitalEncounter;
     private javax.swing.JComboBox<String> cbNewHouseCity;
     private javax.swing.JComboBox<String> cbNewHouseCommunity;
     private javax.swing.JComboBox<String> cbNewUserCity;
@@ -3060,6 +3298,7 @@ public class LoginJFrame extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbRoleUpdate;
     private javax.swing.JComboBox<String> cbUpdateDoctorCity;
     private javax.swing.JComboBox<String> cbUpdateSpecialization;
+    private com.toedter.calendar.JDateChooser dtNewAppointment;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
@@ -3114,6 +3353,7 @@ public class LoginJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel lblPatientContact;
     private javax.swing.JLabel lblPatientDetails;
     private javax.swing.JLabel lblPatientName;
+    private javax.swing.JLabel lblPatientNameEncounter;
     private javax.swing.JLabel lblPhoneNo;
     private javax.swing.JLabel lblRole;
     private javax.swing.JLabel lblRoleUpdate;
@@ -3156,12 +3396,12 @@ public class LoginJFrame extends javax.swing.JFrame {
     private javax.swing.JTextField txtLastNameUpdate;
     private javax.swing.JTextField txtNewCity;
     private javax.swing.JTextField txtNewCommunity;
+    private javax.swing.JTextField txtNewEncounterPatient;
     private javax.swing.JTextField txtNewHospital;
     private javax.swing.JTextField txtNewHouse;
     private javax.swing.JPasswordField txtNewPassword;
     private javax.swing.JTextField txtNewUserName;
     private javax.swing.JPasswordField txtPasswordUpdate;
-    private javax.swing.JLabel txtPatNameEncounter;
     private javax.swing.JLabel txtPatNameEncounter1;
     private javax.swing.JTextField txtPhoneNo;
     private javax.swing.JTextField txtPhoneNoUpdate;

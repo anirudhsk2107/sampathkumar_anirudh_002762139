@@ -13,6 +13,10 @@ import java.util.ArrayList;
 public class DoctorDirectory {
     private static ArrayList<Doctor> doctorList;
 
+    public DoctorDirectory(){
+        doctorList = new ArrayList<Doctor>();
+    }
+    
     public static ArrayList<Doctor> getDoctorList() {
         return doctorList;
     }

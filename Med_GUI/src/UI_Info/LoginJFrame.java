@@ -2124,9 +2124,9 @@ public class LoginJFrame extends javax.swing.JFrame {
                         .addGap(34, 34, 34)
                         .addComponent(btnEditEncounter, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(EditEncounterPanelLayout.createSequentialGroup()
-                        .addComponent(txtSearchPatient, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtSearchPatient)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnSearchPatient, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(btnSearchPatient, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(144, 144, 144)
                 .addGroup(EditEncounterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(EditEncounterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -2309,33 +2309,24 @@ public class LoginJFrame extends javax.swing.JFrame {
                         break;
                     }
                     case "doctor": {
-                        btnAddPatient.setVisible(true);
-                        btnEditPatient.setVisible(true);
+                        btnAddPatient.setVisible(false);
+                        btnEditPatient.setVisible(false);
                         btnAddNewEncounter.setVisible(true);
                         btnViewEditEncounter.setVisible(true);
-                        btnAddNewLocation.setVisible(true);
-                        btnViewEditLocation.setVisible(true);
+                        btnAddNewLocation.setVisible(false);
+                        btnViewEditLocation.setVisible(false);
                         break;
                     }
                     case "patient" : {
-                        btnAddPatient.setVisible(true);
+                        btnAddPatient.setVisible(false);
                         btnEditPatient.setVisible(true);
                         btnAddNewEncounter.setVisible(true);
                         btnViewEditEncounter.setVisible(true);
-                        btnAddNewLocation.setVisible(true);
-                        btnViewEditLocation.setVisible(true);
+                        btnAddNewLocation.setVisible(false);
+                        btnViewEditLocation.setVisible(false);
                         break;
                     }
                  }
-                    
-                    if(!globalRole.equals("sysadmin")){ //|| !globalRole.equals("hospadmin")){
-                        btnAddPatient.setVisible(false);
-                        btnEditPatient.setVisible(false);
-                        btnAddNewEncounter.setVisible(false);
-                        btnViewEditEncounter.setVisible(false);
-                    }
-                        
-                    break;
                 }
             }
         }

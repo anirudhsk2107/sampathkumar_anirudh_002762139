@@ -8,7 +8,7 @@ Each Encounter will have a single Vital Sign component.
 ![Class Diagram for Med_GUI](https://user-images.githubusercontent.com/114316759/198927299-5bf5e8f8-eebb-4fe7-b2ae-0d0f952a8f23.jpeg)
 
 # Sequence Diagram
-![admin](https://user-images.githubusercontent.com/1`14316759/198927268-ee1bb70d-ffdd-4b2d-813c-40c16b55fbc0.jpeg)
+![admin](https://user-images.githubusercontent.com/114316759/198927621-b8cf2d34-ac5b-4c0c-8a69-47a0a3cc1980.jpeg)
 
 ![Patient](https://user-images.githubusercontent.com/114316759/198927287-bf9672cd-148f-413b-b277-f7835b8acab7.jpeg)
 
